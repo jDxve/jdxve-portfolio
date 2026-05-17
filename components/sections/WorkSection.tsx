@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { projects } from "@/lib/data";
 
 const experienceTags = ["NestJS", "PostgreSQL", "Next.js", "TypeScript", "Drizzle ORM", "JWT"];
@@ -21,12 +22,24 @@ export default function WorkSection() {
             {/* Visual Block */}
             <div className={`relative w-full h-[380px] md:h-[460px] ${project.align === "right" ? "md:[direction:ltr]" : ""}`}>
               <div
-                className="absolute top-0 right-8 md:right-12 w-[78%] aspect-[4/3] z-10 flex flex-col items-start justify-end p-6"
+                className="absolute top-0 right-8 md:right-12 w-[78%] aspect-[4/3] z-10 flex flex-col p-6 pt-14"
                 style={{ backgroundColor: project.accentColor, border: "1px solid rgba(255,255,255,0.08)" }}
               >
                 <span className="font-display font-black text-4xl md:text-5xl text-white/10 absolute top-4 left-6 select-none">
                   {project.id}
                 </span>
+                {project.logo ? (
+                  <div className="relative flex-1 min-h-0 mb-4">
+                    <Image
+                      src={project.logo}
+                      alt={project.title}
+                      fill
+                      className="object-contain drop-shadow-xl"
+                    />
+                  </div>
+                ) : (
+                  <div className="flex-1" />
+                )}
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
                     <span key={tag} className="text-[9px] font-bold uppercase tracking-widest px-2 py-1 bg-black/30 text-white/80">

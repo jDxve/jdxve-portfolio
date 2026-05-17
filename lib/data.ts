@@ -15,6 +15,7 @@ export const projects = [
     ],
     tags: ["Flutter", "Riverpod", "Clean Arch", "OpenStreetMap", "Retrofit"],
     align: "left",
+    logo: "/mynagalaga.png",
   },
   {
     id: "02",
@@ -32,6 +33,7 @@ export const projects = [
     ],
     tags: ["Flutter", "Provider", "Express.js", "Socket.IO", "PayMongo", "FCM"],
     align: "right",
+    logo: "/elecxus.png",
   },
   {
     id: "03",
@@ -48,6 +50,7 @@ export const projects = [
     ],
     tags: ["Flutter", "Node.js", "MongoDB", "PayMongo", "WebSocket"],
     align: "left",
+    logo: "/eatease.png",
   },
 ];
 

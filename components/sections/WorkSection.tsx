@@ -18,7 +18,7 @@ export default function WorkSection() {
             {/* Row 1 — number + title */}
             <div className="flex items-baseline gap-5 mb-10">
               <span className="font-mono text-[#ff5500] text-xs font-bold shrink-0">{project.id} /</span>
-              <h3 className="text-5xl md:text-7xl font-display font-black text-[#0d0d0d] dark:text-white leading-none tracking-tighter">
+              <h3 className="text-4xl md:text-5xl font-display font-black text-[#0d0d0d] dark:text-white leading-none tracking-tighter">
                 {project.title}
               </h3>
             </div>

@@ -16,7 +16,7 @@ export default function Home() {
         src="/Flutter_logo.svg"
         alt=""
         aria-hidden="true"
-        className="pointer-events-none select-none fixed grayscale"
+        className="pointer-events-none select-none fixed grayscale hidden md:block"
         style={{ left: 0, top: "calc(50vh - 410px)", width: "820px", opacity: 0.30 }}
       />
       <Header />

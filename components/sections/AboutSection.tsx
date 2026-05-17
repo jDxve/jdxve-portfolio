@@ -52,8 +52,9 @@ export default function AboutSection() {
         </div>
 
         {/* Profile Image */}
-        <div className="relative w-full pb-16">
-          <div className="relative w-full h-[570px] overflow-hidden border border-black/10 dark:border-white/10">
+        <div className="relative w-full max-w-[380px] mx-auto sm:max-w-none sm:mx-0">
+          {/* Image */}
+          <div className="relative w-full h-[380px] sm:h-[570px] overflow-hidden border border-black/10 dark:border-white/10">
             <Image
               src="/my_profile.jpeg"
               alt="John Dave B. Bañas"
@@ -62,41 +63,41 @@ export default function AboutSection() {
               className="object-cover object-top"
               unoptimized
             />
-            <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-[#E8E8E8]/60 to-transparent" />
+            <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-[#E8E8E8]/60 dark:from-[#0d0d0d]/60 to-transparent" />
+
+            {/* Corner brackets */}
+            <div className="absolute top-2 left-2 w-8 h-8 border-t-2 border-l-2 border-[#ff5500] z-20 pointer-events-none" />
+            <div className="absolute top-2 right-2 w-8 h-8 border-t-2 border-r-2 border-[#ff5500] z-20 pointer-events-none" />
+            <div className="absolute bottom-[60px] left-2 w-8 h-8 border-b-2 border-l-2 border-[#ff5500] z-20 pointer-events-none" />
+            <div className="absolute bottom-[60px] right-2 w-8 h-8 border-b-2 border-r-2 border-[#ff5500] z-20 pointer-events-none" />
           </div>
 
-          {/* Corner brackets */}
-          <div className="absolute top-2 left-2 w-8 h-8 border-t-2 border-l-2 border-[#ff5500] z-20 pointer-events-none" />
-          <div className="absolute top-2 right-2 w-8 h-8 border-t-2 border-r-2 border-[#ff5500] z-20 pointer-events-none" />
-          <div className="absolute top-[542px] left-2 w-8 h-8 border-b-2 border-l-2 border-[#ff5500] z-20 pointer-events-none" />
-          <div className="absolute top-[542px] right-2 w-8 h-8 border-b-2 border-r-2 border-[#ff5500] z-20 pointer-events-none" />
+          {/* Badges — overlap image bottom via negative margin */}
+          <div className="relative z-30 flex justify-between -mt-8 px-2 sm:px-4">
+            {/* Status badge */}
+            <div className="bg-[#ff5500] clip-path-cyber px-4 sm:px-6 py-3 sm:py-4">
+              <span className="text-[8px] font-bold uppercase tracking-[0.2em] text-white block mb-1">Status</span>
+              <span className="font-display font-black text-xs sm:text-sm text-white whitespace-nowrap">OPEN TO WORK</span>
+            </div>
 
-          {/* Status badge */}
-          <div
-            className="absolute left-4 z-30 bg-[#ff5500] clip-path-cyber px-6 py-4"
-            style={{ top: "538px" }}
-          >
-            <span className="text-[8px] font-bold uppercase tracking-[0.2em] text-white block mb-1">Status</span>
-            <span className="font-display font-black text-sm text-white">OPEN TO WORK</span>
-          </div>
-
-          {/* Stack badge */}
-          <div
-            className="absolute right-4 z-30 bg-white dark:bg-[#1a1a1a] border border-black/10 dark:border-white/10 px-5 py-4 shadow-[0_8px_32px_rgba(0,0,0,0.12)]"
-            style={{ top: "538px", borderLeftColor: "#ff5500", borderLeftWidth: "2px" }}
-          >
-            <span className="text-[8px] font-bold uppercase tracking-[0.2em] text-[#ff5500] block mb-2">Stack</span>
-            <div className="flex items-center gap-4">
-              <div className="flex items-center gap-1.5">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/Flutter_logo.svg" alt="Flutter" width={18} height={18} />
-                <span className="font-bold text-sm uppercase text-[#0d0d0d] dark:text-white tracking-wide">Flutter</span>
-              </div>
-              <span className="text-neutral-400 font-bold">·</span>
-              <div className="flex items-center gap-1.5">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/NestJS.svg" alt="NestJS" width={18} height={18} />
-                <span className="font-bold text-sm uppercase text-[#0d0d0d] dark:text-white tracking-wide">NestJS</span>
+            {/* Stack badge */}
+            <div
+              className="bg-white dark:bg-[#1a1a1a] border border-black/10 dark:border-white/10 px-3 sm:px-5 py-3 sm:py-4 shadow-[0_8px_32px_rgba(0,0,0,0.12)]"
+              style={{ borderLeftColor: "#ff5500", borderLeftWidth: "2px" }}
+            >
+              <span className="text-[8px] font-bold uppercase tracking-[0.2em] text-[#ff5500] block mb-1.5 sm:mb-2">Stack</span>
+              <div className="flex items-center gap-2 sm:gap-4">
+                <div className="flex items-center gap-1">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/Flutter_logo.svg" alt="Flutter" width={14} height={14} className="sm:w-[16px] sm:h-[16px]" />
+                  <span className="font-bold text-[10px] sm:text-sm uppercase text-[#0d0d0d] dark:text-white tracking-wide">Flutter</span>
+                </div>
+                <span className="text-neutral-400 font-bold">·</span>
+                <div className="flex items-center gap-1">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/NestJS.svg" alt="NestJS" width={14} height={14} className="sm:w-[16px] sm:h-[16px]" />
+                  <span className="font-bold text-[10px] sm:text-sm uppercase text-[#0d0d0d] dark:text-white tracking-wide">NestJS</span>
+                </div>
               </div>
             </div>
           </div>

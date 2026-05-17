@@ -2,8 +2,8 @@ import { categories } from "@/lib/data";
 
 export default function StackSection() {
   return (
-    <section id="stack" className="relative z-10 max-w-[1100px] mx-auto px-6 lg:px-12 pt-20 pb-32">
-      <div className="border-t border-black/10 dark:border-white/10 pt-20 mb-20">
+    <section id="stack" className="relative z-10 max-w-[1100px] mx-auto px-6 lg:px-12 pt-16 pb-16 scroll-mt-16">
+      <div className="mb-10">
         <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ff5500] block mb-3">
           Technologies
         </span>
@@ -51,7 +51,7 @@ export default function StackSection() {
         ))}
       </div>
 
-      <div className="mt-32 max-w-2xl mb-16">
+      <div className="mt-16 max-w-2xl mb-10">
         <p className="text-2xl md:text-3xl font-display font-black text-[#0d0d0d] dark:text-white uppercase tracking-tight leading-tight mb-6">
           CLEAN CODE.<br />CLEAN ARCHITECTURE.<br />
           <span className="text-[#ff5500]">ALWAYS.</span>
@@ -61,7 +61,6 @@ export default function StackSection() {
           things that are maintainable, scalable, and fast.
         </p>
       </div>
-      <div className="border-t border-black/10 dark:border-white/10" />
     </section>
   );
 }

@@ -5,15 +5,15 @@ const experienceTags = ["NestJS", "PostgreSQL", "Next.js", "TypeScript", "Drizzl
 
 export default function WorkSection() {
   return (
-    <section id="work" className="relative z-10 max-w-[1100px] mx-auto px-6 lg:px-12 pt-20 pb-6">
-      <div className="border-t border-black/10 dark:border-white/10 pt-20 mb-20">
+    <section id="work" className="relative z-10 max-w-[1100px] mx-auto px-6 lg:px-12 pt-16 pb-16 scroll-mt-16">
+      <div className="mb-10">
         <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ff5500]">Selected Work</span>
         <h2 className="text-5xl md:text-7xl font-display font-black tracking-tighter text-[#0d0d0d] dark:text-white mt-2 uppercase">Projects</h2>
       </div>
 
       <div className="flex flex-col">
         {projects.map((project, index) => (
-          <div key={project.id} className="group border-t border-black/10 dark:border-white/10 pt-10 pb-16">
+          <div key={project.id} className="group pt-10 pb-16">
 
             {/* Row 1 — number + title */}
             <div className="flex items-baseline gap-5 mb-10">
@@ -70,7 +70,7 @@ export default function WorkSection() {
                   ))}
                 </ul>
 
-                <div className="flex flex-wrap gap-1.5 pt-4 border-t border-black/10 dark:border-white/10">
+                <div className="flex flex-wrap gap-1.5 pt-4">
                   {project.tags.map((tag) => (
                     <span key={tag} className="font-mono text-[8px] uppercase tracking-widest px-2.5 py-1 border border-black/20 dark:border-white/20 text-neutral-700 dark:text-neutral-300 hover:border-[#ff5500] hover:text-[#ff5500] transition-colors cursor-default">
                       {tag}
@@ -85,7 +85,7 @@ export default function WorkSection() {
       </div>
 
       {/* Experience */}
-      <div className="mt-40 pt-20 border-t border-black/10 dark:border-white/10">
+      <div className="mt-16">
         <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ff5500]">Professional</span>
         <h2 className="text-5xl md:text-7xl font-display font-black tracking-tighter text-[#0d0d0d] dark:text-white mt-2 uppercase mb-16">
           Experience

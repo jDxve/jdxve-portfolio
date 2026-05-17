@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 const navLinks = [
@@ -13,9 +13,21 @@ const navLinks = [
 export default function Header() {
   const [isDark, setIsDark] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [visible, setVisible] = useState(true);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     setIsDark(document.documentElement.classList.contains("dark"));
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      setVisible(currentY < lastScrollY.current || currentY < 60);
+      lastScrollY.current = currentY;
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleTheme = () => {
@@ -30,7 +42,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full bg-[#E8E8E8]/95 dark:bg-[#0d0d0d]/95 backdrop-blur-sm border-b border-black/10 dark:border-white/10">
+      <header className={`fixed top-0 left-0 right-0 z-50 w-full transition-transform duration-300 ${visible ? "translate-y-0" : "-translate-y-full"}`}>
         <div className="max-w-[1100px] mx-auto px-6 py-5 flex justify-between items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}

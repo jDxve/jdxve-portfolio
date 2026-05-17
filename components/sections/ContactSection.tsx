@@ -2,8 +2,8 @@ import { contactLinks } from "@/lib/data";
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="relative z-10 max-w-[1100px] mx-auto px-6 lg:px-12 pt-8 pb-32">
-      <div className="pt-8 mb-16">
+    <section id="contact" className="relative z-10 max-w-[1100px] mx-auto px-6 lg:px-12 pt-16 pb-16 scroll-mt-16">
+      <div className="mb-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-end">
           <div>
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ff5500] block mb-3">

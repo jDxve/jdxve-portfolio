@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="relative z-10 max-w-[1100px] mx-auto px-6 lg:px-12 min-h-screen flex flex-col justify-center pt-24 pb-16">
+    <section id="about" className="relative z-10 max-w-[1100px] mx-auto px-6 lg:px-12 min-h-screen flex flex-col justify-center pt-32 pb-16 scroll-mt-16">
       {/* Hero Row */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-16">
         {/* Text */}
@@ -105,7 +105,7 @@ export default function AboutSection() {
       </div>
 
       {/* Education */}
-      <div className="border-t border-black/10 dark:border-white/10 pt-20">
+      <div className="pt-20">
         <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ff5500] block mb-3">Academic</span>
         <h2 className="text-4xl md:text-6xl font-display font-black tracking-tighter text-[#0d0d0d] dark:text-white uppercase mb-16">
           Education

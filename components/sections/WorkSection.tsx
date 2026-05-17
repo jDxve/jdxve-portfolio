@@ -94,10 +94,10 @@ export default function WorkSection() {
           <div>
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ff5500] block mb-3">Feb – May 2026</span>
             <h3 className="text-3xl md:text-4xl font-display font-black text-[#0d0d0d] dark:text-white uppercase tracking-tighter leading-tight mb-2">
-              BACKEND DEVELOPER INTERN
+              SOFTWARE DEVELOPER INTERN
             </h3>
             <p className="text-neutral-500 dark:text-neutral-400 font-bold text-sm uppercase tracking-widest mb-8">
-              Quanby Solutions, Inc. · Payroll System
+              Quanby Solutions, Inc. | Payroll System
             </p>
             <div className="w-10 h-0.5 bg-[#ff5500] mb-8" />
           </div>

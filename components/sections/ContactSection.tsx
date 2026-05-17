@@ -57,7 +57,7 @@ export default function ContactSection() {
               READY TO BUILD<br />
               <span className="text-[#ff5500]">SOMETHING GREAT?</span>
             </h2>
-            <p className="text-neutral-500 text-sm">Open to full-time roles, freelance, and collaborations.</p>
+            <p className="text-neutral-600 dark:text-neutral-300 text-sm">Open to full-time roles, freelance, and collaborations.</p>
           </div>
           <a
             href="mailto:johndavebanas03@gmail.com"

@@ -10,11 +10,11 @@ export default function AboutSection() {
           <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ff5500] block mb-3">
             Who I Am
           </span>
-          <h2 className="text-5xl md:text-7xl font-display font-black tracking-tighter text-[#0d0d0d] dark:text-white uppercase leading-none mb-8">
+          <h2 className="text-4xl md:text-5xl lg:text-7xl font-display font-black tracking-tighter text-[#0d0d0d] dark:text-white uppercase leading-none mb-8">
             JOHN DAVE<br />B. BAÑAS
           </h2>
           <div className="w-10 h-0.5 bg-[#ff5500] mb-8" />
-          <p className="text-neutral-700 dark:text-neutral-200 text-base leading-relaxed max-w-md mb-10">
+          <p className="text-neutral-700 dark:text-neutral-200 text-base leading-relaxed mb-10 text-justify">
             Mobile Developer specializing in cross-platform{" "}
             <span className="text-[#0d0d0d] dark:text-white font-bold">Flutter</span> applications,
             with hands-on backend experience in{" "}
@@ -73,30 +73,30 @@ export default function AboutSection() {
           </div>
 
           {/* Badges — overlap image bottom via negative margin */}
-          <div className="relative z-30 flex justify-between -mt-8 px-2 sm:px-4">
+          <div className="relative z-30 flex justify-between -mt-8 px-2">
             {/* Status badge */}
-            <div className="bg-[#ff5500] clip-path-cyber px-4 sm:px-6 py-3 sm:py-4">
+            <div className="bg-[#ff5500] clip-path-cyber px-4 lg:px-6 py-3 lg:py-4">
               <span className="text-[8px] font-bold uppercase tracking-[0.2em] text-white block mb-1">Status</span>
-              <span className="font-display font-black text-xs sm:text-sm text-white whitespace-nowrap">OPEN TO WORK</span>
+              <span className="font-display font-black text-xs lg:text-sm text-white whitespace-nowrap">OPEN TO WORK</span>
             </div>
 
             {/* Stack badge */}
             <div
-              className="bg-white dark:bg-[#1a1a1a] border border-black/10 dark:border-white/10 px-3 sm:px-5 py-3 sm:py-4 shadow-[0_8px_32px_rgba(0,0,0,0.12)]"
+              className="bg-white dark:bg-[#1a1a1a] border border-black/10 dark:border-white/10 px-3 lg:px-5 py-3 lg:py-4 shadow-[0_8px_32px_rgba(0,0,0,0.12)]"
               style={{ borderLeftColor: "#ff5500", borderLeftWidth: "2px" }}
             >
-              <span className="text-[8px] font-bold uppercase tracking-[0.2em] text-[#ff5500] block mb-1.5 sm:mb-2">Stack</span>
-              <div className="flex items-center gap-2 sm:gap-4">
+              <span className="text-[8px] font-bold uppercase tracking-[0.2em] text-[#ff5500] block mb-1.5 lg:mb-2">Stack</span>
+              <div className="flex items-center gap-2 lg:gap-4">
                 <div className="flex items-center gap-1">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/Flutter_logo.svg" alt="Flutter" width={14} height={14} className="sm:w-[16px] sm:h-[16px]" />
-                  <span className="font-bold text-[10px] sm:text-sm uppercase text-[#0d0d0d] dark:text-white tracking-wide">Flutter</span>
+                  <img src="/Flutter_logo.svg" alt="Flutter" width={13} height={13} className="lg:w-[16px] lg:h-[16px]" />
+                  <span className="font-bold text-[10px] lg:text-sm uppercase text-[#0d0d0d] dark:text-white tracking-wide">Flutter</span>
                 </div>
-                <span className="text-neutral-400 font-bold">·</span>
+                <span className="text-neutral-400 font-bold">|</span>
                 <div className="flex items-center gap-1">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/NestJS.svg" alt="NestJS" width={14} height={14} className="sm:w-[16px] sm:h-[16px]" />
-                  <span className="font-bold text-[10px] sm:text-sm uppercase text-[#0d0d0d] dark:text-white tracking-wide">NestJS</span>
+                  <img src="/NestJS.svg" alt="NestJS" width={13} height={13} className="lg:w-[16px] lg:h-[16px]" />
+                  <span className="font-bold text-[10px] lg:text-sm uppercase text-[#0d0d0d] dark:text-white tracking-wide">NestJS</span>
                 </div>
               </div>
             </div>
@@ -143,7 +143,7 @@ export default function AboutSection() {
               <span className="font-bold text-sm text-[#0d0d0d] dark:text-white leading-tight block">
                 Grand Winner — 1st Naga City Mayoral Hackathon
               </span>
-              <span className="text-[10px] text-neutral-600 dark:text-neutral-300 mt-1 block">Social Services Challenge · 2026</span>
+              <span className="text-[10px] text-neutral-600 dark:text-neutral-300 mt-1 block">Social Services Challenge | 2026</span>
             </div>
           </div>
         </div>

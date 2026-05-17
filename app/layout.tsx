@@ -25,9 +25,17 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${orbitron.variable} h-full antialiased dark scroll-smooth`}
+      className={`${spaceGrotesk.variable} ${orbitron.variable} h-full antialiased scroll-smooth`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col bg-black text-white font-sans overflow-x-hidden selection:bg-white selection:text-black">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})()`,
+          }}
+        />
+      </head>
+      <body className="min-h-full flex flex-col bg-[#E8E8E8] dark:bg-[#0d0d0d] text-[#0d0d0d] dark:text-white font-sans overflow-x-hidden selection:bg-[#ff5500] selection:text-white">
         {children}
       </body>
     </html>

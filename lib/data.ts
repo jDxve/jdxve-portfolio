@@ -1,7 +1,7 @@
 export const projects = [
   {
     id: "01",
-    title: "MYNAGALAGA",
+    title: "MyNagAlaga",
     subtitle: "Government Services Platform",
     role: "Mobile Developer",
     year: "2026",
@@ -19,13 +19,13 @@ export const projects = [
   },
   {
     id: "02",
-    title: "ELECXUS",
+    title: "ElecXus",
     subtitle: "Consumer Service Management System",
     role: "Full Stack Developer · Capstone Project",
     year: "Aug – Nov 2025",
     award: null,
     awardCategory: null,
-    accentColor: "#1a1a1a",
+    accentColor: "#222222",
     bullets: [
       "Built a scalable Flutter frontend using MVVM with Provider state management, featuring map-based complaint location tagging via OpenStreetMap.",
       "Developed Express.js REST APIs for billing, complaints, and notifications; integrated FCM push notifications, Facebook Graph API, and real-time Socket.IO updates.",
@@ -37,13 +37,13 @@ export const projects = [
   },
   {
     id: "03",
-    title: "EATEASE",
+    title: "EatEase",
     subtitle: "Food Ordering Mobile Application",
     role: "Full Stack Developer",
     year: "Jan – Mar 2025",
     award: null,
     awardCategory: null,
-    accentColor: "#ff5500",
+    accentColor: "#FF5500",
     bullets: [
       "Built the Flutter frontend with order tracking, in-app chat, and PayMongo payment integration.",
       "Developed the Node.js/MongoDB backend handling orders, real-time chat via WebSocket, and payment webhooks.",

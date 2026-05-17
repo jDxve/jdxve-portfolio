@@ -2,27 +2,27 @@ import Image from "next/image";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="relative z-10 max-w-[1100px] mx-auto px-6 lg:px-12 pt-32 pb-32">
+    <section id="about" className="relative z-10 max-w-[1100px] mx-auto px-6 lg:px-12 min-h-screen flex flex-col justify-center pt-24 pb-16">
       {/* Hero Row */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-32">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-16">
         {/* Text */}
         <div>
-          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ff5500] block mb-3">
+          <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ff5500] block mb-3">
             Who I Am
           </span>
-          <h2 className="text-5xl md:text-7xl font-display font-black tracking-tighter text-white uppercase leading-none mb-8">
+          <h2 className="text-5xl md:text-7xl font-display font-black tracking-tighter text-[#0d0d0d] dark:text-white uppercase leading-none mb-8">
             JOHN DAVE<br />B. BAÑAS
           </h2>
-          <div className="w-10 h-0.5 bg-white mb-8" />
-          <p className="text-neutral-400 text-base leading-relaxed max-w-md mb-10">
-            A Mobile Developer specializing in cross-platform{" "}
-            <span className="text-white font-bold">Flutter</span> applications,
-            with backend experience in{" "}
-            <span className="text-white font-bold">NestJS</span> and TypeScript.
-            Deeply committed to clean code and clean architecture — building
-            efficient, scalable apps that deliver seamless user experiences.
+          <div className="w-10 h-0.5 bg-[#ff5500] mb-8" />
+          <p className="text-neutral-700 dark:text-neutral-200 text-base leading-relaxed max-w-md mb-10">
+            Mobile Developer specializing in cross-platform{" "}
+            <span className="text-[#0d0d0d] dark:text-white font-bold">Flutter</span> applications,
+            with hands-on backend experience in{" "}
+            <span className="text-[#0d0d0d] dark:text-white font-bold">NestJS</span> and TypeScript.
+            Committed to clean code and clean architecture, continuously learning and implementing
+            new technologies to build efficient, innovative, and scalable applications.
           </p>
-          <div className="flex flex-col gap-3 text-[11px] font-mono text-neutral-300">
+          <div className="flex flex-col gap-3 text-[11px] font-mono text-neutral-700 dark:text-neutral-200">
             <a href="mailto:johndavebanas03@gmail.com" className="flex items-center gap-2 hover:text-[#ff5500] transition-colors">
               <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -53,16 +53,16 @@ export default function AboutSection() {
 
         {/* Profile Image */}
         <div className="relative w-full pb-16">
-          <div className="relative w-full h-[570px] overflow-hidden border border-white/10">
+          <div className="relative w-full h-[570px] overflow-hidden border border-black/10 dark:border-white/10">
             <Image
               src="/my_profile.jpeg"
               alt="John Dave B. Bañas"
               fill
+              loading="eager"
               className="object-cover object-top"
               unoptimized
             />
-            <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-black/50 to-transparent" />
-            <div className="absolute top-0 inset-x-0 h-[3px] bg-[#ff5500]" />
+            <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-[#E8E8E8]/60 to-transparent" />
           </div>
 
           {/* Corner brackets */}
@@ -73,16 +73,16 @@ export default function AboutSection() {
 
           {/* Status badge */}
           <div
-            className="absolute left-4 z-30 bg-[#ff5500] clip-path-cyber px-6 py-4 shadow-[0_0_40px_rgba(255,85,0,0.45)]"
+            className="absolute left-4 z-30 bg-[#ff5500] clip-path-cyber px-6 py-4"
             style={{ top: "538px" }}
           >
-            <span className="text-[8px] font-bold uppercase tracking-[0.2em] text-black/50 block mb-1">Status</span>
-            <span className="font-display font-black text-sm text-black">OPEN TO WORK</span>
+            <span className="text-[8px] font-bold uppercase tracking-[0.2em] text-white block mb-1">Status</span>
+            <span className="font-display font-black text-sm text-white">OPEN TO WORK</span>
           </div>
 
           {/* Stack badge */}
           <div
-            className="absolute right-4 z-30 bg-[#111]/90 backdrop-blur-sm border border-white/10 px-5 py-4 shadow-[0_8px_32px_rgba(0,0,0,0.6)]"
+            className="absolute right-4 z-30 bg-white dark:bg-[#1a1a1a] border border-black/10 dark:border-white/10 px-5 py-4 shadow-[0_8px_32px_rgba(0,0,0,0.12)]"
             style={{ top: "538px", borderLeftColor: "#ff5500", borderLeftWidth: "2px" }}
           >
             <span className="text-[8px] font-bold uppercase tracking-[0.2em] text-[#ff5500] block mb-2">Stack</span>
@@ -90,13 +90,13 @@ export default function AboutSection() {
               <div className="flex items-center gap-1.5">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/Flutter_logo.svg" alt="Flutter" width={18} height={18} />
-                <span className="font-bold text-sm uppercase text-white tracking-wide">Flutter</span>
+                <span className="font-bold text-sm uppercase text-[#0d0d0d] dark:text-white tracking-wide">Flutter</span>
               </div>
-              <span className="text-neutral-600 font-bold">·</span>
+              <span className="text-neutral-400 font-bold">·</span>
               <div className="flex items-center gap-1.5">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/NestJS.svg" alt="NestJS" width={18} height={18} />
-                <span className="font-bold text-sm uppercase text-white tracking-wide">NestJS</span>
+                <span className="font-bold text-sm uppercase text-[#0d0d0d] dark:text-white tracking-wide">NestJS</span>
               </div>
             </div>
           </div>
@@ -104,33 +104,45 @@ export default function AboutSection() {
       </div>
 
       {/* Education */}
-      <div className="border-t border-white/5 pt-20">
-        <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ff5500] block mb-3">Academic</span>
-        <h2 className="text-4xl md:text-6xl font-display font-black tracking-tighter text-white uppercase mb-16">
+      <div className="border-t border-black/10 dark:border-white/10 pt-20">
+        <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ff5500] block mb-3">Academic</span>
+        <h2 className="text-4xl md:text-6xl font-display font-black tracking-tighter text-[#0d0d0d] dark:text-white uppercase mb-16">
           Education
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>
-            <h3 className="text-2xl md:text-3xl font-display font-black text-white uppercase tracking-tight leading-tight mb-3">
+            <h3 className="text-2xl md:text-3xl font-display font-black text-[#0d0d0d] dark:text-white uppercase tracking-tight leading-tight mb-3">
               BS INFORMATION<br />TECHNOLOGY
             </h3>
             <div className="w-8 h-0.5 bg-[#ff5500] mb-6" />
-            <p className="text-neutral-400 text-sm leading-relaxed">
-              Bicol University College of Science<br />
-              Legazpi City, Bicol, Philippines
-            </p>
+            <div className="flex flex-col gap-1.5 text-neutral-700 dark:text-neutral-200 text-sm leading-relaxed">
+              <div className="flex items-center gap-2">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 text-[#ff5500]">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                  <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                </svg>
+                <span>Bicol University College of Science</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 text-[#ff5500]">
+                  <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <span>Legazpi City, Bicol, Philippines</span>
+              </div>
+            </div>
           </div>
           <div className="flex flex-col gap-4">
-            <div className="border border-white/5 bg-white/[0.02] p-6">
-              <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-neutral-500 block mb-1">Period</span>
-              <span className="font-display font-black text-xl text-white">2022 — 2026</span>
+            <div className="border border-black/8 bg-white/60 dark:bg-white/[0.05] p-6">
+              <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-neutral-600 dark:text-neutral-300 block mb-1">Period</span>
+              <span className="font-display font-black text-xl text-[#0d0d0d] dark:text-white">2022 — 2026</span>
             </div>
             <div className="border border-[#ff5500]/30 bg-[#ff5500]/5 p-6">
               <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-[#ff5500] block mb-1">Highlight</span>
-              <span className="font-bold text-sm text-white leading-tight block">
+              <span className="font-bold text-sm text-[#0d0d0d] dark:text-white leading-tight block">
                 Grand Winner — 1st Naga City Mayoral Hackathon
               </span>
-              <span className="text-[10px] text-neutral-400 mt-1 block">Social Services Challenge · 2026</span>
+              <span className="text-[10px] text-neutral-600 dark:text-neutral-300 mt-1 block">Social Services Challenge · 2026</span>
             </div>
           </div>
         </div>

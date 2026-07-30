@@ -7,17 +7,18 @@ import ContactSection from "@/components/sections/ContactSection";
 
 export default function Home() {
   return (
-    <main className="relative bg-[#E8E8E8] dark:bg-[#0d0d0d] text-[#0d0d0d] dark:text-white selection:bg-[#ff5500] selection:text-white overflow-hidden">
+    <main className="relative bg-surface text-ink selection:bg-accent selection:text-white overflow-hidden">
+      {/* Military-grade grain texture */}
       <div className="noise-bg" />
 
-      {/* Background logo: Flutter */}
+      {/* Flutter logo watermark — light-mode background */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src="/Flutter_logo.svg"
         alt=""
         aria-hidden="true"
-        className="pointer-events-none select-none fixed grayscale"
-        style={{ left: 0, top: "calc(50vh - 410px)", width: "820px", opacity: 0.15 }}
+        className="pointer-events-none select-none fixed grayscale opacity-[0.14] z-0"
+        style={{ left: "-120px", top: "calc(50vh - 360px)", width: "720px" }}
       />
       <Header />
       <AboutSection />

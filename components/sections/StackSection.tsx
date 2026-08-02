@@ -6,29 +6,20 @@ export default function StackSection() {
     <section id="stack" className="relative z-10 max-w-[1100px] mx-auto px-6 lg:px-12 pt-20 pb-20 scroll-mt-16">
       <SectionHeader eyebrow="Technical Skills" title="Tech Stack" count={String(categories.length).padStart(2, "0")} />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12">
         {categories.map((cat) => (
-          <div
-            key={cat.label}
-            className={`rounded-lg p-6 md:p-7 ${
-              cat.featured
-                ? "border border-accent/50 bg-accent/[0.03]"
-                : "border border-line bg-raised/50"
-            }`}
-          >
+          <div key={cat.label}>
             {/* Header */}
-            <div className="border-b border-line pb-4 mb-4">
-              <div className="flex items-center gap-2.5">
-                {cat.featured && (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src="/Flutter_logo.svg" alt="" width={18} height={18} className="shrink-0" />
-                )}
-                <h3 className="font-display font-black text-lg text-ink uppercase tracking-tight">
-                  {cat.label}
-                </h3>
-              </div>
+            <div className="flex items-center gap-2.5 border-b border-line pb-3 mb-5">
               {cat.featured && (
-                <span className="mt-1.5 block text-[9px] font-bold uppercase tracking-[0.2em] text-accent">
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src="/Flutter_logo.svg" alt="" width={16} height={16} className="shrink-0" />
+              )}
+              <h3 className="font-display font-black text-base text-ink uppercase tracking-tight">
+                {cat.label}
+              </h3>
+              {cat.featured && (
+                <span className="ml-auto text-[9px] font-bold uppercase tracking-[0.2em] text-accent">
                   Primary Focus
                 </span>
               )}
@@ -36,19 +27,15 @@ export default function StackSection() {
 
             {/* Blurb (featured) */}
             {cat.featured && cat.blurb && (
-              <p className="text-sm text-muted leading-relaxed mb-4">{cat.blurb}</p>
+              <p className="text-sm text-muted leading-relaxed mb-5">{cat.blurb}</p>
             )}
 
-            {/* Tags */}
-            <div className="flex flex-wrap gap-1.5">
+            {/* Tags — minimal outline chips */}
+            <div className="flex flex-wrap gap-2">
               {cat.items.map((item) => (
                 <span
                   key={item}
-                  className={`rounded-md px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide transition-colors cursor-default ${
-                    cat.featured
-                      ? "border border-accent/30 bg-raised text-ink hover:border-accent"
-                      : "border border-line-strong text-muted hover:text-accent hover:border-accent"
-                  }`}
+                  className="rounded-md border border-line px-3 py-1 text-xs text-muted hover:border-accent hover:text-accent transition-colors cursor-default"
                 >
                   {item}
                 </span>

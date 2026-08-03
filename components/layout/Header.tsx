@@ -15,11 +15,20 @@ export default function Header() {
   useEffect(() => {
     const ids = navLinks.map((l) => l.href.slice(1));
     const onScroll = () => {
+      // A section becomes active once its heading crosses the middle of the
+      // viewport — feels natural and works for short sections too.
+      const threshold = window.innerHeight * 0.5;
       let current = ids[0];
       for (const id of ids) {
         const el = document.getElementById(id);
-        if (el && el.getBoundingClientRect().top <= 130) current = id;
+        if (el && el.getBoundingClientRect().top <= threshold) current = id;
       }
+      // Safety net: at the very bottom, the last section may never cross the
+      // threshold, so activate it explicitly.
+      const atBottom =
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 2;
+      if (atBottom) current = ids[ids.length - 1];
       setActive(current);
     };
     onScroll();

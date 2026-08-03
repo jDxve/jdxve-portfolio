@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 
 interface HalftoneImageProps {
@@ -89,13 +90,23 @@ export default function HalftoneImage({ src, alt }: HalftoneImageProps) {
   }, [src]);
 
   return (
-    <canvas
-      ref={canvasRef}
-      width={480}
-      height={600}
-      aria-label={alt}
-      className="w-full h-full"
-      style={{ display: "block" }}
-    />
+    <div className="group relative w-full h-full">
+      <canvas
+        ref={canvasRef}
+        width={480}
+        height={600}
+        aria-label={alt}
+        className="w-full h-full"
+        style={{ display: "block" }}
+      />
+      {/* Reveal the original photo on hover */}
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes="480px"
+        className="object-cover object-top opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100"
+      />
+    </div>
   );
 }

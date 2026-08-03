@@ -11,7 +11,7 @@ type ContactLink = {
 };
 
 const ROW_CLASS =
-  "group flex flex-1 items-center gap-4 px-5 md:px-6 py-4 hover:bg-raised transition-colors text-left w-full";
+  "group flex flex-1 items-center gap-4 px-5 md:px-6 py-4 text-left w-full";
 
 function RowInner({ link }: { link: ContactLink }) {
   return (

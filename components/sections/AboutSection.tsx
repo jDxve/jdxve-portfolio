@@ -44,7 +44,7 @@ export default function AboutSection() {
         {/* ---------- Sidebar ---------- */}
         <aside className="flex flex-col gap-6">
           {/* Photo — halftone dot portrait */}
-          <div className="relative aspect-[4/5] rounded-xl overflow-hidden">
+          <div className="relative aspect-[4/5] rounded-md overflow-hidden">
             <HalftoneImage src="/my_profile.jpeg" alt="John Dave B. Bañas" />
           </div>
 

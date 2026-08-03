@@ -28,14 +28,13 @@ export default function Header() {
   }, []);
 
   return (
-    <>
-      {/* ── Desktop: fixed left sidebar ── */}
-      <aside className="hidden md:flex fixed left-0 top-0 h-full w-[130px] z-50 flex-col items-start px-4 py-7 gap-10">
+    /* Desktop: fixed left sidebar */
+    <aside className="hidden md:flex fixed left-0 top-0 h-full w-[130px] z-50 flex-col items-start px-4 py-7 gap-10">
         {/* Brand */}
         <a
           href="#about"
           aria-label="Home"
-          className="font-display font-black text-lg tracking-tighter text-ink leading-none pl-2"
+          className="font-display font-black text-2xl tracking-tight text-ink leading-none pl-2"
         >
           jDxve
         </a>
@@ -67,25 +66,6 @@ export default function Header() {
             );
           })}
         </nav>
-      </aside>
-
-      {/* ── Mobile: fixed bottom tab bar ── */}
-      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 flex items-center justify-around bg-surface/95 backdrop-blur-md border-t border-line px-2 py-3">
-        {navLinks.map(({ label, href }) => {
-          const isActive = active === href.slice(1);
-          return (
-            <a
-              key={label}
-              href={href}
-              className={`font-sans text-[10px] font-semibold uppercase tracking-widest transition-colors duration-200 ${
-                isActive ? "text-accent" : "text-muted"
-              }`}
-            >
-              {label}
-            </a>
-          );
-        })}
-      </nav>
-    </>
+    </aside>
   );
 }

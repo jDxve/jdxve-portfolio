@@ -1,5 +1,4 @@
 import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
 import AiChat from "@/components/layout/AiChat";
 import AboutSection from "@/components/sections/AboutSection";
 import WorkSection from "@/components/sections/WorkSection";
@@ -17,7 +16,6 @@ export default function Home() {
       <WorkSection />
       <StackSection />
       <ContactSection />
-      <Footer />
       <AiChat />
     </main>
   );

@@ -333,7 +333,7 @@ export default function AiChat() {
       <button
         onClick={() => setOpen((o) => !o)}
         aria-label={open ? "Close A.V.E chat" : "Open A.V.E chat"}
-        className="fixed bottom-5 right-5 sm:right-7 z-[110] hover:scale-105 transition-transform"
+        className="fixed bottom-5 right-5 sm:right-7 z-[110] hover:scale-105 transition-transform drop-shadow-[0_10px_14px_rgba(13,13,13,0.3)]"
       >
         <RobotHead size={70} isThinking={typing} isOpen={open} />
       </button>

@@ -44,8 +44,21 @@ async function getContributions(): Promise<{ total: number; days: Day[] } | null
   }
 }
 
+async function getRepoCount(): Promise<number | null> {
+  try {
+    const res = await fetch(`https://api.github.com/users/${GITHUB_USER}`, {
+      next: { revalidate: 3600 },
+    });
+    if (!res.ok) return null;
+    const data = await res.json();
+    return typeof data?.public_repos === "number" ? data.public_repos : null;
+  } catch {
+    return null;
+  }
+}
+
 export default async function GithubSection() {
-  const data = await getContributions();
+  const [data, repoCount] = await Promise.all([getContributions(), getRepoCount()]);
 
   // Pad the front so each column aligns to a weekday, GitHub-style.
   const cells: (Day | null)[] = [];
@@ -62,14 +75,26 @@ export default async function GithubSection() {
         <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-faint block mb-4">
           Open Source
         </span>
-        <div className="flex items-center gap-4 md:gap-5 border-b border-line pb-3">
-          <div className="w-5 shrink-0 self-start mt-1.5 text-muted">
+        <a
+          href={`https://github.com/${GITHUB_USER}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group flex items-start gap-4 md:gap-5 border-b border-line pb-3"
+        >
+          <div className="w-5 shrink-0 self-start mt-1 text-muted group-hover:text-accent transition-colors">
             <GitHubIcon />
           </div>
-          <h2 className="font-display font-black text-xl md:text-2xl text-ink uppercase tracking-tight leading-none">
-            GitHub
-          </h2>
-        </div>
+          <span className="inline-flex items-start gap-2">
+            <h2 className="font-display font-black text-xl md:text-2xl text-ink uppercase tracking-tight leading-none group-hover:text-accent transition-colors">
+              GitHub
+            </h2>
+            <span className="mt-0.5 shrink-0 text-faint group-hover:text-accent transition-colors">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M7 17 17 7M9 7h8v8" />
+              </svg>
+            </span>
+          </span>
+        </a>
       </div>
 
       {/* Contribution dot-matrix */}
@@ -97,6 +122,10 @@ export default async function GithubSection() {
 
           <p className="mt-4 font-mono text-xs uppercase tracking-[0.2em] text-faint tabular">
             {data!.total.toLocaleString()} contributions in the last year
+            {repoCount !== null && (
+              <span className="text-line-strong"> | </span>
+            )}
+            {repoCount !== null && `${repoCount} public repos`}
           </p>
         </>
       )}

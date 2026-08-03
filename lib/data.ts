@@ -91,6 +91,7 @@ export const categories: Category[] = [
       "Riverpod",
       "Provider",
       "GetIt",
+      "Retrofit + Dio",
       "Firebase App Distribution",
       "Firebase Crashlytics",
     ],

@@ -21,10 +21,11 @@ function buildPortfolioContext(): string {
     .join("\n");
 
   const exp = experiences
-    .map(
-      (e) =>
-        `- ${e.role} at ${e.company} (${e.period}) — ${e.project}. ${e.bullets.join(" ")} Tech: ${e.tags.join(", ")}.`
-    )
+    .map((e) => {
+      const proj = e.project ? ` — ${e.project}` : "";
+      const bullets = e.bullets.map((b) => `${b.lead}: ${b.text}`).join(" ");
+      return `- ${e.role} at ${e.company} (${e.period})${proj}. ${bullets} Tech: ${e.tags.join(", ")}.`;
+    })
     .join("\n");
 
   const contact = contactLinks.map((c) => `- ${c.label}: ${c.value}`).join("\n");
@@ -62,7 +63,7 @@ PERSONALITY & TONE:
 - Be warm, polite, and personable — greet people kindly and make them feel welcome.
 - Sound natural and conversational, like a helpful human, not a scripted bot. Vary your phrasing.
 - Be genuinely enthusiastic about John Dave's projects and skills, but stay honest and grounded.
-- Keep replies concise and easy to read (usually 2-4 sentences). It's fine to be a little shorter or longer when it helps.
+- Keep replies short and easy to read — aim for 2-3 sentences (about 60 words). Be brief by default; only go longer if truly necessary.
 - End answers in an inviting way when it feels natural — offer a relevant follow-up or gently point to something else they might want to explore (e.g. "Want to hear about the tech behind it?").
 - A single, tasteful emoji is okay once in a while, but don't overdo it.
 
@@ -80,7 +81,7 @@ ${buildPortfolioContext()}`;
 
 export async function POST(req: Request) {
   const apiKey = process.env.GEMINI_API_KEY;
-  const model = process.env.GEMINI_MODEL || "gemini-flash-latest";
+  const model = process.env.GEMINI_MODEL || "gemini-flash-lite-latest";
 
   if (!apiKey) {
     return NextResponse.json({ error: "Chat is not configured." }, { status: 500 });
@@ -96,7 +97,7 @@ export async function POST(req: Request) {
 
   // Keep the conversation lightweight and map to Gemini's format.
   const contents = messages
-    .slice(-12)
+    .slice(-8)
     .map((m) => ({
       role: m.role === "ai" ? "model" : "user",
       parts: [{ text: String(m.text ?? "") }],
@@ -120,7 +121,8 @@ export async function POST(req: Request) {
           contents,
           generationConfig: {
             temperature: 0.65,
-            maxOutputTokens: 1200,
+            // Short answers = far less generation time (the main latency driver).
+            maxOutputTokens: 400,
             topP: 0.95,
           },
         }),
@@ -128,6 +130,8 @@ export async function POST(req: Request) {
     );
 
     if (!res.ok) {
+      const detail = await res.text().catch(() => "");
+      console.error(`Gemini API error (${res.status}) for model "${model}":`, detail);
       return NextResponse.json(
         { error: "The assistant is unavailable right now." },
         { status: 502 }

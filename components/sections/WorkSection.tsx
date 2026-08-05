@@ -59,7 +59,56 @@ function SkillLine({ tags }: { tags: string[] }) {
 export default function WorkSection() {
   return (
     <section id="work" className="relative z-10 max-w-[1100px] mx-auto px-6 lg:px-12 pt-20 pb-20 scroll-mt-16">
-      <SectionHeader eyebrow="Selected Work" title="Projects" count={String(projects.length).padStart(2, "0")} />
+      {/* Experience */}
+      <div id="experience" className="scroll-mt-20">
+        <SectionHeader eyebrow="Professional" title="Experience" count={String(experiences.length).padStart(2, "0")} />
+
+        <div className="flex flex-col">
+          {experiences.map((exp, i) => {
+            const last = i === experiences.length - 1;
+            return (
+              <article key={exp.role} className="flex gap-4 md:gap-5">
+                <Rail last={last}>
+                  <OrgIcon />
+                </Rail>
+
+                {/* Content */}
+                <div className={`min-w-0 flex-1 ${last ? "pb-0" : "pb-10"}`}>
+                  <h3 className="font-display font-black text-lg md:text-xl text-ink uppercase tracking-tight leading-tight">
+                    {exp.company}
+                  </h3>
+
+                  <p className="text-sm font-semibold text-ink mt-3">{exp.role}</p>
+                  {exp.project && (
+                    <p className="font-mono text-[11px] uppercase tracking-wide text-faint tabular mt-2">
+                      {exp.project}
+                    </p>
+                  )}
+                  <p className="font-mono text-[11px] uppercase tracking-wide text-faint tabular mt-1">
+                    {exp.period}
+                  </p>
+
+                  {/* Description */}
+                  <div className="mt-3 space-y-2.5 text-sm text-muted leading-relaxed">
+                    {exp.bullets.map((b, j) => (
+                      <p key={j}>
+                        <span className="font-semibold text-ink">{b.lead}:</span> {b.text}
+                      </p>
+                    ))}
+                  </div>
+
+                  {/* Skills */}
+                  <SkillLine tags={exp.tags} />
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="mt-20">
+        <SectionHeader eyebrow="Selected Work" title="Projects" count={String(projects.length).padStart(2, "0")} />
+      </div>
 
       {/* Projects — LinkedIn-style list with connector rail */}
       <div className="flex flex-col">
@@ -142,49 +191,6 @@ export default function WorkSection() {
             </article>
           );
         })}
-      </div>
-
-      {/* Experience */}
-      <div id="experience" className="mt-20 scroll-mt-20">
-        <SectionHeader eyebrow="Professional" title="Experience" count={String(experiences.length).padStart(2, "0")} />
-
-        <div className="flex flex-col">
-          {experiences.map((exp, i) => {
-            const last = i === experiences.length - 1;
-            return (
-              <article key={exp.role} className="flex gap-4 md:gap-5">
-                <Rail last={last}>
-                  <OrgIcon />
-                </Rail>
-
-                {/* Content */}
-                <div className={`min-w-0 flex-1 ${last ? "pb-0" : "pb-10"}`}>
-                  <h3 className="font-display font-black text-lg md:text-xl text-ink uppercase tracking-tight leading-tight">
-                    {exp.company}
-                  </h3>
-
-                  <p className="text-sm font-semibold text-ink mt-3">{exp.role}</p>
-                  <p className="font-mono text-[11px] uppercase tracking-wide text-faint tabular mt-2">
-                    {exp.project}
-                  </p>
-                  <p className="font-mono text-[11px] uppercase tracking-wide text-faint tabular mt-1">
-                    {exp.period}
-                  </p>
-
-                  {/* Description */}
-                  <div className="mt-3 space-y-2.5 text-sm text-muted leading-relaxed">
-                    {exp.bullets.map((b, j) => (
-                      <p key={j}>{b}</p>
-                    ))}
-                  </div>
-
-                  {/* Skills */}
-                  <SkillLine tags={exp.tags} />
-                </div>
-              </article>
-            );
-          })}
-        </div>
       </div>
     </section>
   );

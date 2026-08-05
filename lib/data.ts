@@ -58,14 +58,40 @@ export const projects = [
 
 export const experiences = [
   {
-    role: "Software Developer Intern",
+    role: "IT Specialist – Mobile & Desktop Developer",
+    company: "LCC Group of Companies",
+    project: null,
+    period: "July 2026 – Present",
+    bullets: [
+      {
+        lead: "Cross-Platform Application Maintenance",
+        text: "Maintain and stabilize an enterprise .NET MAUI mobile (Android) and desktop application used daily by 100+ staff across 5+ warehouse and retail locations, taking ownership of app reliability, bug fixing, and scanner integrations.",
+      },
+      {
+        lead: "Offline State & Data Reliability",
+        text: "Refactored C# local SQLite caching overlays to maintain local UI state during live reloads, eliminating data loss and network sync-race conditions during active warehouse operations.",
+      },
+      {
+        lead: "Barcode Hardware & Catalog Resolution",
+        text: "Implemented custom catalog lookup logic and automated integration tests to map hardware UPC scans to inventory items, preventing data validation errors during stock processing.",
+      },
+    ],
+    tags: [".NET MAUI", "C#", "SQLite", "Android", "Desktop", "Barcode/Scanner Integration"],
+  },
+  {
+    role: "Software Developer Intern (OJT)",
     company: "Quanby Solutions, Inc.",
     project: "Payroll Management System",
     period: "Feb – May 2026",
     bullets: [
-      "Shipped 11 full-stack modules end-to-end — auth, employee management, attendance, leave, overtime, and payroll — from NestJS/PostgreSQL backend through Next.js frontend.",
-      "Designed and consumed the REST API layer connecting frontend to backend, including JWT authentication and role-based access across all modules.",
-      "Ran end-to-end testing across all modules, resolved defects prior to client handover, and worked directly with non-technical stakeholders to turn requirements into shipped features.",
+      {
+        lead: "End-to-End Module Delivery",
+        text: "Developed and integrated 11 full-stack modules end-to-end, from NestJS/PostgreSQL backend to Next.js frontend, covering auth, employee management, attendance, leave, overtime, payroll, and more.",
+      },
+      {
+        lead: "Testing & Compliance",
+        text: "Conducted end-to-end testing across all modules and implemented audit logging and idle session timeout for security and compliance.",
+      },
     ],
     tags: ["NestJS", "PostgreSQL", "Next.js", "TypeScript", "REST APIs", "JWT"],
   },

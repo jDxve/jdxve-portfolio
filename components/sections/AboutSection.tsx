@@ -73,21 +73,6 @@ export default function AboutSection() {
               Albay, Philippines
             </span>
 
-            {/* LinkedIn */}
-            <a
-              href="https://linkedin.com/in/jdv-b%C3%B1s"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 font-mono text-sm text-muted hover:text-accent transition-colors"
-            >
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 text-faint">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                <rect width="4" height="12" x="2" y="9"/>
-                <circle cx="4" cy="4" r="2"/>
-              </svg>
-              linkedin.com/in/jdv-bñs
-            </a>
-
             {/* Resume */}
             <a
               href="/resume/RESUME.pdf"
@@ -115,8 +100,8 @@ export default function AboutSection() {
         </aside>
 
         {/* ---------- Main: profile details ---------- */}
-        <div className="min-w-0">
-          <div className="flex flex-col gap-10">
+        <div className="min-w-0 h-full">
+          <div className="flex flex-col gap-7 h-full">
               {/* About */}
               <div>
                 <CvHeading title="About Me" />
@@ -138,7 +123,7 @@ export default function AboutSection() {
                     <CapIcon />
                   </IconTile>
                   <div className="min-w-0">
-                    <h3 className="font-display font-black text-xl md:text-2xl text-ink uppercase tracking-tight leading-tight">
+                    <h3 className="font-display font-black text-lg md:text-xl text-ink uppercase tracking-tight leading-tight">
                       BS Information Technology
                     </h3>
                     <p className="font-mono text-[11px] uppercase tracking-wide text-accent tabular mt-1">
@@ -159,7 +144,7 @@ export default function AboutSection() {
                     <TrophyIcon />
                   </IconTile>
                   <div className="min-w-0">
-                    <h3 className="font-display font-black text-xl md:text-2xl text-ink uppercase tracking-tight leading-tight">
+                    <h3 className="font-display font-black text-lg md:text-xl text-ink uppercase tracking-tight leading-tight">
                       Grand Winner — Naga City Mayoral Hackathon
                     </h3>
                     <p className="font-mono text-[11px] uppercase tracking-wide text-accent tabular mt-1">
@@ -182,7 +167,9 @@ export default function AboutSection() {
               </div>
 
               {/* GitHub contributions */}
-              <GithubSection />
+              <div className="mt-auto">
+                <GithubSection />
+              </div>
           </div>
         </div>
       </div>

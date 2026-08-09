@@ -71,7 +71,7 @@ export default async function GithubSection() {
   return (
     <div id="github" className="scroll-mt-16">
       {/* Header matching the achievement entry style */}
-      <div className="mb-8">
+      <div className="mb-6">
         <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-faint block mb-4">
           Open Source
         </span>
@@ -85,7 +85,7 @@ export default async function GithubSection() {
             <GitHubIcon />
           </div>
           <span className="inline-flex items-start gap-2">
-            <h2 className="font-display font-black text-xl md:text-2xl text-ink uppercase tracking-tight leading-none group-hover:text-accent transition-colors">
+            <h2 className="font-display font-black text-lg md:text-xl text-ink uppercase tracking-tight leading-none group-hover:text-accent transition-colors">
               GitHub
             </h2>
             <span className="mt-0.5 shrink-0 text-faint group-hover:text-accent transition-colors">

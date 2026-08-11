@@ -193,11 +193,14 @@ export default function AiChat() {
     setMessages(next);
     setInput("");
     setTyping(true);
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 22_000);
     try {
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ messages: next }),
+        signal: controller.signal,
       });
       const data = await res.json();
       const reply =
@@ -205,12 +208,19 @@ export default function AiChat() {
           ? data.reply
           : "Sorry, I'm having trouble responding right now. Please try again or reach John Dave via the Contact section.";
       setMessages((m) => [...m, { role: "ai", text: reply }]);
-    } catch {
+    } catch (err) {
+      const timedOut = err instanceof DOMException && err.name === "AbortError";
       setMessages((m) => [
         ...m,
-        { role: "ai", text: "Sorry, I couldn't connect. Please try again in a moment." },
+        {
+          role: "ai",
+          text: timedOut
+            ? "Sorry, that's taking longer than usual. Please try again in a moment."
+            : "Sorry, I couldn't connect. Please try again in a moment.",
+        },
       ]);
     } finally {
+      clearTimeout(timeout);
       setTyping(false);
     }
   };

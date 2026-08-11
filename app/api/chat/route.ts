@@ -110,20 +110,28 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "No message provided." }, { status: 400 });
   }
 
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 20_000);
+
   try {
     const res = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        signal: controller.signal,
         body: JSON.stringify({
           system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
           contents,
           generationConfig: {
             temperature: 0.65,
-            // Short answers = far less generation time (the main latency driver).
-            maxOutputTokens: 400,
+            // Enough headroom that short replies never get truncated.
+            maxOutputTokens: 600,
             topP: 0.95,
+            // Flash-Lite's internal "thinking" otherwise eats into
+            // maxOutputTokens and adds latency for no benefit on a
+            // short-answer bot — turn it off.
+            thinkingConfig: { thinkingBudget: 0 },
           },
         }),
       }
@@ -146,10 +154,18 @@ export async function POST(req: Request) {
     return NextResponse.json({
       reply: reply.trim() || "Sorry, I couldn't come up with an answer for that.",
     });
-  } catch {
+  } catch (err) {
+    if (err instanceof Error && err.name === "AbortError") {
+      return NextResponse.json(
+        { error: "The assistant is taking too long to respond. Please try again." },
+        { status: 504 }
+      );
+    }
     return NextResponse.json(
       { error: "The assistant is unavailable right now." },
       { status: 502 }
     );
+  } finally {
+    clearTimeout(timeout);
   }
 }

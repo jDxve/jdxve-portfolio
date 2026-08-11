@@ -128,10 +128,6 @@ export async function POST(req: Request) {
             // Enough headroom that short replies never get truncated.
             maxOutputTokens: 600,
             topP: 0.95,
-            // Flash-Lite's internal "thinking" otherwise eats into
-            // maxOutputTokens and adds latency for no benefit on a
-            // short-answer bot — turn it off.
-            thinkingConfig: { thinkingBudget: 0 },
           },
         }),
       }

@@ -65,15 +65,15 @@ export const experiences = [
     bullets: [
       {
         lead: "Cross-Platform Application Maintenance",
-        text: "Maintain and stabilize an enterprise .NET MAUI mobile (Android) and desktop application used daily by 100+ staff across 5+ warehouse and retail locations, taking ownership of app reliability, bug fixing, and scanner integrations.",
+        text: "Maintain and optimize enterprise .NET MAUI Android and desktop applications supporting 100+ daily operational staff across 10+ warehouse and retail locations.",
       },
       {
-        lead: "Offline State & Data Reliability",
-        text: "Refactored C# local SQLite caching overlays to maintain local UI state during live reloads, eliminating data loss and network sync-race conditions during active warehouse operations.",
+        lead: "Offline-First Data Reliability",
+        text: "Engineered an offline-first SQLite caching layer that resolved race conditions and eliminated live data loss during high-traffic warehouse floor updates, cutting sync failures by an estimated 80%.",
       },
       {
-        lead: "Barcode Hardware & Catalog Resolution",
-        text: "Implemented custom catalog lookup logic and automated integration tests to map hardware UPC scans to inventory items, preventing data validation errors during stock processing.",
+        lead: "Barcode Hardware & Validation",
+        text: "Integrated custom hardware barcode scanning routines and automated test suites, eliminating data validation failures during inventory intake and reducing intake time per shipment.",
       },
     ],
     tags: [".NET MAUI", "C#", "SQLite", "Android", "Desktop", "Barcode/Scanner Integration"],
@@ -85,15 +85,19 @@ export const experiences = [
     period: "Feb – May 2026",
     bullets: [
       {
-        lead: "End-to-End Module Delivery",
-        text: "Developed and integrated 11 full-stack modules end-to-end, from NestJS/PostgreSQL backend to Next.js frontend, covering auth, employee management, attendance, leave, overtime, payroll, and more.",
+        lead: "Backend Leadership",
+        text: "Led backend development on a NestJS payroll system, establishing architectural standards and reviewing pull requests across a team of 3 engineers.",
       },
       {
-        lead: "Testing & Compliance",
-        text: "Conducted end-to-end testing across all modules and implemented audit logging and idle session timeout for security and compliance.",
+        lead: "End-to-End Module Delivery",
+        text: "Architected and shipped 11 full-stack modules (NestJS, PostgreSQL, Next.js) covering authentication, attendance, overtime calculation, and payroll processing.",
+      },
+      {
+        lead: "Security & Compliance",
+        text: "Implemented role-based access control (RBAC), audit logging, session timeouts, and end-to-end integration tests to safeguard financial workflows.",
       },
     ],
-    tags: ["NestJS", "PostgreSQL", "Next.js", "TypeScript", "REST APIs", "JWT"],
+    tags: ["NestJS", "PostgreSQL", "Next.js", "TypeScript", "REST APIs", "RBAC", "JWT"],
   },
 ];
 

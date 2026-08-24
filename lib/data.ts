@@ -2,7 +2,7 @@ export const projects = [
   {
     id: "01",
     title: "MyNagAlaga",
-    subtitle: "Citizen Services App for Naga City",
+    subtitle: "Government Services Platform",
     role: "Mobile Developer",
     context: null,
     year: "2026",
@@ -10,9 +10,9 @@ export const projects = [
     awardCategory: "Social Services Challenge",
     article: "https://bicol-u.edu.ph/buenos-sweep-top-awards-at-1st-naga-city-mayoral-hackathon/",
     bullets: [
-      "Built the citizen-facing Flutter app for Naga City's welfare and disaster response services using Clean Architecture with Riverpod, and Retrofit + Dio for type-safe API integration — winning the Social Services Challenge at the city's first Mayoral Hackathon.",
-      "Integrated the OpenStreetMap API to route users to the nearest evacuation center via proximity evaluation with interactive route display, replacing manual hotline lookups during emergencies.",
-      "Implemented the Digital Badge module for citizen identity verification across welfare and disaster response workflows.",
+      "Engineered the citizen-facing mobile application using Clean Architecture and Riverpod, ensuring high maintainability, consistent code standards, and reliable state management.",
+      "Integrated a secure, multi-purpose Digital Badge module, accelerating identity validation for aid distribution (ayuda) and civic services to drive 3x faster case resolution for municipal staff.",
+      "Developed interactive OpenStreetMap (OSM) routing features, delivering proximity-based, real-time evacuation navigation for citizens during disaster emergencies.",
     ],
     tags: ["Flutter", "Riverpod", "Clean Architecture", "Retrofit + Dio", "OpenStreetMap"],
     logo: "/mynagalaga.png",
@@ -21,17 +21,17 @@ export const projects = [
   {
     id: "02",
     title: "ElecXus",
-    subtitle: "Consumer Service Management App",
-    role: "Mobile & Backend Developer",
+    subtitle: "Electric Service Management System",
+    role: "Full Stack Developer",
     context: "Capstone · Albay Electric Cooperative",
     year: "Aug – Nov 2025",
     award: null,
     awardCategory: null,
     article: null,
     bullets: [
-      "Built the Flutter app that gives electric cooperative consumers self-service billing, payments, and complaint filing with map-based location tagging — replacing in-person office visits.",
-      "Integrated the PayMongo API end-to-end (GCash, Maya, GrabPay, Cards) across app and backend, including webhook handling for payment confirmation and failure states.",
-      "Delivered real-time complaint status updates over Socket.IO with Firebase Cloud Messaging push notifications, and pulled outage advisories from the cooperative's Facebook page using the Graph API.",
+      "Engineered a self-service utility application with automated billing, geospatial complaint logging, and live outage tracking via the Facebook Graph API, earning a 4.62/5.0 UAT rating and a 98% post-launch adoption rate.",
+      "Integrated the PayMongo payment gateway (e-wallets, cards) with webhook-driven reconciliation for instant transaction confirmation.",
+      "Delivered real-time status pipelines using Socket.IO and Firebase Cloud Messaging (FCM) for push alerts, providing end-to-end transparency across high-volume issue resolution workflows.",
     ],
     tags: ["Flutter", "PayMongo", "Socket.IO", "FCM", "Facebook Graph API"],
     logo: "/elecxus.png",
@@ -40,15 +40,16 @@ export const projects = [
   {
     id: "03",
     title: "EatEase",
-    subtitle: "Food Ordering App",
-    role: "Mobile & Backend Developer",
+    subtitle: "Food Ordering Mobile Application",
+    role: "Full Stack Developer",
     context: null,
     year: "Jan – Mar 2025",
     award: null,
     awardCategory: null,
     article: null,
     bullets: [
-      "Built the Flutter app with live order tracking, in-app customer–vendor chat over WebSocket, and PayMongo checkout, backed by a Node.js/MongoDB API handling orders and payment webhooks.",
+      "Built a cross-platform Flutter food ordering application featuring live order tracking, real-time customer–vendor WebSocket chat, and digital checkout.",
+      "Architected the MongoDB schema and Node.js REST API layer managing order lifecycles, vendor menus, and payment reconciliation.",
     ],
     tags: ["Flutter", "WebSocket", "PayMongo", "Node.js", "MongoDB"],
     logo: "/eatease.png",
@@ -65,11 +66,11 @@ export const experiences = [
     bullets: [
       {
         lead: "Cross-Platform Application Maintenance",
-        text: "Maintain and optimize enterprise .NET MAUI Android and desktop applications supporting 100+ daily operational staff across 10+ warehouse and retail locations.",
+        text: "Maintain and optimize enterprise Android and desktop applications (.NET MAUI, C#) supporting 100+ daily operational staff across 10+ warehouse and retail locations.",
       },
       {
         lead: "Offline-First Data Reliability",
-        text: "Engineered an offline-first SQLite caching layer that resolved race conditions and eliminated live data loss during high-traffic warehouse floor updates, cutting sync failures by an estimated 80%.",
+        text: "Engineered an offline-first SQLite caching layer that resolved race conditions and eliminated live data loss during high-traffic warehouse floor updates, cutting sync failures by roughly 97%.",
       },
       {
         lead: "Barcode Hardware & Validation",

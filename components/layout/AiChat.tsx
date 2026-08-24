@@ -1,12 +1,12 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import ResumePreviewModal, { RESUME_PATH } from "@/components/ui/ResumePreviewModal";
 
 type Msg = { role: "user" | "ai"; text: string };
 
-const RESUME_PATH = "/resume/RESUME.pdf";
-
 function AiMessage({ text }: { text: string }) {
+  const [preview, setPreview] = useState(false);
   const hasResume = text.includes(RESUME_PATH);
   // Strip the raw path from the visible text; the button replaces it.
   const display = hasResume
@@ -17,10 +17,11 @@ function AiMessage({ text }: { text: string }) {
     <div className="rounded-lg border border-line bg-raised/90 px-4 py-3 text-sm text-ink leading-relaxed shadow-xs">
       {display}
       {hasResume && (
-        <a
-          href={RESUME_PATH}
-          download
-          className="group mt-3 flex items-center gap-3 rounded-lg border border-line bg-surface hover:border-accent px-3 py-2.5 transition-colors"
+        <button
+          type="button"
+          onClick={() => setPreview(true)}
+          aria-haspopup="dialog"
+          className="group mt-3 flex w-full items-center gap-3 rounded-lg border border-line bg-surface hover:border-accent px-3 py-2.5 transition-colors cursor-pointer text-left"
         >
           <span className="grid place-items-center w-9 h-9 rounded-md bg-accent/10 text-accent shrink-0">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
@@ -29,17 +30,18 @@ function AiMessage({ text }: { text: string }) {
           </span>
           <span className="flex flex-col min-w-0 leading-tight">
             <span className="text-sm font-bold text-ink truncate">RESUME.pdf</span>
-            <span className="text-[11px] text-muted">PDF · Tap to download</span>
+            <span className="text-[11px] text-muted">PDF · Tap to preview</span>
           </span>
           <span className="ml-auto text-muted group-hover:text-accent transition-colors shrink-0">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-              <path d="M7 10l5 5 5-5" />
-              <path d="M12 15V3" />
+              <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z" />
+              <circle cx="12" cy="12" r="3" />
             </svg>
           </span>
-        </a>
+        </button>
       )}
+
+      {hasResume && <ResumePreviewModal open={preview} onClose={() => setPreview(false)} />}
     </div>
   );
 }

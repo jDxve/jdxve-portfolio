@@ -14,7 +14,7 @@ const orbitron = Orbitron({
 
 export const metadata: Metadata = {
   title: "jDxve | John Dave B. Bañas",
-  description: "Mobile Developer specializing in Flutter and NestJS. Clean code. Clean architecture.",
+  description: "Mobile & Full-Stack Developer — Flutter, Kotlin, and NestJS. Clean code. Clean architecture.",
 };
 
 export default function RootLayout({

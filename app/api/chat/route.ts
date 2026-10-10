@@ -32,14 +32,15 @@ function buildPortfolioContext(): string {
 
   return `PROFILE
 Name: John Dave B. Bañas
-Title: Mobile Application Developer
+Title: Mobile & Full-Stack Developer
 Location: Albay, Philippines
+Website: www.jdxve.dev
 Status: Open to work.
 Resume: A downloadable PDF resume/CV is available at /resume/RESUME.pdf
-About: Mobile Developer specializing in cross-platform Flutter applications and an aspiring Mobile Software Engineer. Focused on clean architecture, clean code, and constantly adopting new tech to build efficient, scalable apps.
+About: Mobile & Full-Stack Developer building cross-platform Flutter apps, native Android with Kotlin and Jetpack Compose, and the NestJS backends behind them. Focused on clean architecture, offline-first reliability, and shipping systems that hold up in production.
 
 EDUCATION
-BS Information Technology — Bicol University College of Science, Legazpi City, Philippines (2022–2026).
+BS Information Technology, Cum Laude — Bicol University College of Science, Legazpi City, Philippines (2022–2026, graduated June 2026).
 
 ACHIEVEMENTS
 Grand Winner — 1st Naga City Mayoral Hackathon (Social Services Challenge, 2026), with the MyNagAlaga app. Article: https://bicol-u.edu.ph/buenos-sweep-top-awards-at-1st-naga-city-mayoral-hackathon/

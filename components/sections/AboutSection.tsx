@@ -56,7 +56,7 @@ export default function AboutSection() {
             </h1>
             <p className="font-mono text-xs text-faint mt-1.5 tracking-wide">@jDxve</p>
             <p className="text-sm font-semibold text-accent mt-2 uppercase tracking-wider">
-              Mobile Application Developer
+              Mobile &amp; Full-Stack Developer
             </p>
           </div>
 
@@ -95,11 +95,12 @@ export default function AboutSection() {
                 <CvHeading title="About Me" />
                 <p className="text-muted text-base leading-relaxed">
                   Hi, I&apos;m John Dave — a{" "}
-                  <span className="text-ink font-semibold">Mobile Developer</span> specializing in
-                  cross-platform applications and an{" "}
-                  <span className="text-ink font-semibold">aspiring Mobile Software Engineer</span>.
-                  Focused on clean architecture, clean code, and constantly adopting new tech to
-                  build efficient, scalable apps.
+                  <span className="text-ink font-semibold">Mobile &amp; Full-Stack Developer</span>{" "}
+                  building cross-platform Flutter apps, native Android with Kotlin and Jetpack
+                  Compose, and the{" "}
+                  <span className="text-ink font-semibold">NestJS backends</span> behind them.
+                  Focused on clean architecture, offline-first reliability, and shipping systems
+                  that hold up in production.
                 </p>
               </div>
 
@@ -115,11 +116,12 @@ export default function AboutSection() {
                       BS Information Technology
                     </h3>
                     <p className="font-mono text-[11px] uppercase tracking-wide text-accent tabular mt-1">
-                      2022 — 2026
+                      2022 — 2026 · Cum Laude
                     </p>
                     <p className="text-sm text-muted mt-2.5">
                       Bicol University College of Science · Legazpi City, Philippines
                     </p>
+                    <p className="text-sm text-faint mt-1">Graduated June 2026</p>
                   </div>
                 </div>
               </div>

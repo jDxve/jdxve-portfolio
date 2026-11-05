@@ -82,7 +82,7 @@ ${buildPortfolioContext()}`;
 
 export async function POST(req: Request) {
   const apiKey = process.env.GEMINI_API_KEY;
-  const model = process.env.GEMINI_MODEL || "gemini-flash-lite-latest";
+  const model = process.env.GEMINI_MODEL || "gemini-2.0-flash";
 
   if (!apiKey) {
     return NextResponse.json({ error: "Chat is not configured." }, { status: 500 });

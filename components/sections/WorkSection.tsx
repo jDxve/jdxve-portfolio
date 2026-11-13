@@ -44,7 +44,7 @@ function ServerIcon({ size = 20 }: { size?: number }) {
 function Rail({ children, last }: { children: React.ReactNode; last: boolean }) {
   return (
     <div className="flex flex-col items-center shrink-0">
-      <div className="relative grid place-items-center w-12 h-12 rounded-lg border border-line bg-surface overflow-hidden text-muted">
+      <div className="relative grid place-items-center w-10 h-10 sm:w-12 sm:h-12 rounded-lg border border-line bg-surface overflow-hidden text-muted shrink-0">
         {children}
       </div>
       {!last && <span className="w-px flex-1 bg-line mt-2" />}
@@ -55,11 +55,11 @@ function Rail({ children, last }: { children: React.ReactNode; last: boolean }) 
 // Skills rendered as bordered pills — matching the Tech Stack section
 function SkillLine({ tags }: { tags: string[] }) {
   return (
-    <div className="mt-5 flex flex-wrap gap-2">
+    <div className="mt-4 sm:mt-5 flex flex-wrap gap-1.5 sm:gap-2">
       {tags.map((tag) => (
         <span
           key={tag}
-          className="rounded-md border border-line-strong px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-muted hover:border-accent hover:text-accent transition-colors cursor-default whitespace-nowrap"
+          className="rounded-md border border-line-strong px-2.5 py-0.5 sm:px-3 sm:py-1 text-[10px] sm:text-[11px] font-semibold uppercase tracking-wide text-muted hover:border-accent hover:text-accent transition-colors cursor-default whitespace-nowrap"
         >
           {tag}
         </span>
@@ -70,7 +70,7 @@ function SkillLine({ tags }: { tags: string[] }) {
 
 export default function WorkSection() {
   return (
-    <section id="work" className="relative z-10 max-w-[1100px] mx-auto px-6 lg:px-12 pt-20 pb-20 scroll-mt-16">
+    <section id="work" className="relative z-10 max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-12 pt-14 md:pt-20 pb-14 md:pb-20 scroll-mt-16">
       {/* Experience */}
       <div id="experience" className="scroll-mt-20">
         <SectionHeader eyebrow="Professional" title="Experience" count={String(experiences.length).padStart(2, "0")} />
@@ -79,29 +79,29 @@ export default function WorkSection() {
           {experiences.map((exp, i) => {
             const last = i === experiences.length - 1;
             return (
-              <article key={`${exp.company}-${exp.role}`} className="flex gap-4 md:gap-5">
+              <article key={`${exp.company}-${exp.role}`} className="flex gap-3.5 sm:gap-5">
                 <Rail last={last}>
                   <OrgIcon />
                 </Rail>
 
                 {/* Content */}
-                <div className={`min-w-0 flex-1 ${last ? "pb-0" : "pb-10"}`}>
-                  <h3 className="font-display font-black text-lg md:text-xl text-ink uppercase tracking-tight leading-tight">
+                <div className={`min-w-0 flex-1 ${last ? "pb-0" : "pb-9 sm:pb-10"}`}>
+                  <h3 className="font-display font-black text-base sm:text-lg md:text-xl text-ink uppercase tracking-tight leading-tight">
                     {exp.company}
                   </h3>
 
-                  <p className="text-sm font-semibold text-ink mt-3">{exp.role}</p>
+                  <p className="text-xs sm:text-sm font-semibold text-ink mt-2 sm:mt-3">{exp.role}</p>
                   {exp.project && (
-                    <p className="font-mono text-[11px] uppercase tracking-wide text-faint tabular mt-2">
+                    <p className="font-mono text-[10px] sm:text-[11px] uppercase tracking-wide text-faint tabular mt-1.5 sm:mt-2">
                       {exp.project}
                     </p>
                   )}
-                  <p className="font-mono text-[11px] uppercase tracking-wide text-faint tabular mt-1">
+                  <p className="font-mono text-[10px] sm:text-[11px] uppercase tracking-wide text-faint tabular mt-1">
                     {exp.period}
                   </p>
 
                   {/* Description */}
-                  <div className="mt-3 space-y-2.5 text-sm text-muted leading-relaxed">
+                  <div className="mt-2.5 sm:mt-3 space-y-2 text-xs sm:text-sm text-muted leading-relaxed">
                     {exp.bullets.map((b, j) => (
                       <p key={j}>
                         <span className="font-semibold text-ink">{b.lead}:</span> {b.text}
@@ -118,7 +118,7 @@ export default function WorkSection() {
         </div>
       </div>
 
-      <div className="mt-20">
+      <div className="mt-14 sm:mt-20">
         <SectionHeader eyebrow="Selected Work" title="Projects" count={String(projects.length).padStart(2, "0")} />
       </div>
 
@@ -127,10 +127,10 @@ export default function WorkSection() {
         {projects.map((project, i) => {
           const last = i === projects.length - 1;
           return (
-            <article key={project.id} className="flex gap-4 md:gap-5">
+            <article key={project.id} className="flex gap-3.5 sm:gap-5">
               <Rail last={last}>
                 {project.logo ? (
-                  <Image src={project.logo} alt={project.title} fill className="object-contain p-1.5" />
+                  <Image src={project.logo} alt={project.title} fill className="object-contain p-1 sm:p-1.5" />
                 ) : project.repo ? (
                   <RepoIcon />
                 ) : (
@@ -139,7 +139,7 @@ export default function WorkSection() {
               </Rail>
 
               {/* Content */}
-              <div className={`min-w-0 flex-1 ${last ? "pb-0" : "pb-14"}`}>
+              <div className={`min-w-0 flex-1 ${last ? "pb-0" : "pb-12 sm:pb-14"}`}>
                 {/* Title */}
                 {project.repo ? (
                   <a
@@ -148,7 +148,7 @@ export default function WorkSection() {
                     rel="noopener noreferrer"
                     className="group inline-flex items-start gap-1.5 text-muted"
                   >
-                    <h3 className="font-display font-black text-lg md:text-xl text-ink uppercase tracking-tight leading-tight group-hover:text-accent transition-colors">
+                    <h3 className="font-display font-black text-base sm:text-lg md:text-xl text-ink uppercase tracking-tight leading-tight group-hover:text-accent transition-colors">
                       {project.title}
                     </h3>
                     <span className="mt-0.5 shrink-0 text-faint group-hover:text-accent transition-colors">
@@ -156,30 +156,30 @@ export default function WorkSection() {
                     </span>
                   </a>
                 ) : (
-                  <h3 className="font-display font-black text-lg md:text-xl text-ink uppercase tracking-tight leading-tight">
+                  <h3 className="font-display font-black text-base sm:text-lg md:text-xl text-ink uppercase tracking-tight leading-tight">
                     {project.title}
                   </h3>
                 )}
 
                 {/* Subtitle — directly under the title */}
-                <p className="font-mono text-[11px] uppercase tracking-wide text-faint tabular mt-1.5">
+                <p className="font-mono text-[10px] sm:text-[11px] uppercase tracking-wide text-faint tabular mt-1 sm:mt-1.5">
                   {project.subtitle}
                 </p>
 
                 {/* Role */}
-                <p className="text-sm font-semibold text-ink mt-3">{project.role}</p>
+                <p className="text-xs sm:text-sm font-semibold text-ink mt-2 sm:mt-3">{project.role}</p>
                 {/* Context */}
                 {project.context && (
-                  <p className="text-sm text-accent mt-1">{project.context}</p>
+                  <p className="text-xs sm:text-sm text-accent mt-1">{project.context}</p>
                 )}
                 {/* Date */}
-                <p className="font-mono text-[11px] uppercase tracking-wide text-faint tabular mt-2">
+                <p className="font-mono text-[10px] sm:text-[11px] uppercase tracking-wide text-faint tabular mt-1.5 sm:mt-2">
                   {project.year}
                 </p>
 
                 {/* Award */}
                 {project.award && (
-                  <div className="flex items-center gap-2 mt-4">
+                  <div className="flex items-center gap-2 mt-3 sm:mt-4">
                     <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 text-accent">
                       <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22M18 2H6v7a6 6 0 0 0 12 0V2Z" />
                     </svg>
@@ -193,7 +193,7 @@ export default function WorkSection() {
                 )}
 
                 {/* Description */}
-                <div className="mt-4 space-y-3.5 text-sm text-muted leading-relaxed">
+                <div className="mt-3 sm:mt-4 space-y-2.5 sm:space-y-3 text-xs sm:text-sm text-muted leading-relaxed">
                   {project.bullets.map((b, j) => (
                     <p key={j}>{b}</p>
                   ))}

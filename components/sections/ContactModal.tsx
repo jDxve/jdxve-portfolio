@@ -38,7 +38,7 @@ export default function ContactModalProvider({ children }: { children: ReactNode
           <AnimatePresence>
             {open && (
               <motion.div
-                className="fixed inset-0 z-[90] flex items-center justify-center p-4"
+                className="fixed inset-0 z-[90] flex items-center justify-center p-3 sm:p-4"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -56,7 +56,7 @@ export default function ContactModalProvider({ children }: { children: ReactNode
                   role="dialog"
                   aria-modal="true"
                   aria-label="Send a message"
-                  className="relative w-full max-w-lg rounded-xl border border-line bg-surface shadow-2xl px-6 md:px-7 pb-6 md:pb-7 pt-5 max-h-[90vh] overflow-y-auto overflow-x-hidden"
+                  className="relative w-full max-w-lg rounded-2xl sm:rounded-xl border border-line bg-surface shadow-2xl px-5 sm:px-6 md:px-7 pb-5 sm:pb-6 md:pb-7 pt-5 max-h-[92vh] overflow-y-auto overflow-x-hidden"
                   initial={{ opacity: 0, scale: 0.96, y: 12 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.96, y: 12 }}

@@ -1,4 +1,5 @@
 import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 import AiChat from "@/components/layout/AiChat";
 import AboutSection from "@/components/sections/AboutSection";
 import WorkSection from "@/components/sections/WorkSection";
@@ -7,7 +8,7 @@ import ContactSection from "@/components/sections/ContactSection";
 
 export default function Home() {
   return (
-    <main className="relative bg-surface text-ink selection:bg-accent selection:text-white overflow-hidden md:pl-[130px] pb-20 md:pb-0">
+    <main className="relative bg-surface text-ink selection:bg-accent selection:text-white overflow-hidden md:pl-[130px] pb-12 md:pb-0">
       {/* Military-grade grain texture */}
       <div className="noise-bg" />
 
@@ -16,6 +17,7 @@ export default function Home() {
       <WorkSection />
       <StackSection />
       <ContactSection />
+      <Footer />
       <AiChat />
     </main>
   );

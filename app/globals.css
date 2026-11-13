@@ -38,7 +38,7 @@ body {
 
 @layer base {
   p {
-    text-align: justify;
+    text-align: left;
     hyphens: none;
     overflow-wrap: break-word;
   }

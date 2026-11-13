@@ -228,7 +228,7 @@ export default function AiChat() {
       {/* Panel */}
       <div
         aria-hidden={!open}
-        className={`fixed bottom-24 right-4 sm:right-6 z-[110] w-[380px] max-w-[calc(100vw-2rem)] h-[540px] max-h-[76vh] rounded-lg border border-line-strong bg-surface shadow-xl flex flex-col overflow-hidden origin-bottom-right transition-all duration-300 ease-out ${
+        className={`fixed bottom-[74px] sm:bottom-24 right-3 sm:right-6 z-[110] w-[calc(100vw-1.5rem)] sm:w-[380px] max-w-[380px] h-[500px] max-h-[72vh] sm:max-h-[76vh] rounded-2xl sm:rounded-lg border border-line-strong bg-surface shadow-2xl flex flex-col overflow-hidden origin-bottom-right transition-all duration-300 ease-out ${
           open
             ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"
             : "opacity-0 scale-90 translate-y-3 pointer-events-none"
@@ -342,9 +342,14 @@ export default function AiChat() {
         type="button"
         onClick={() => setOpen((o) => !o)}
         aria-label={open ? "Close A.V.E chat" : "Open A.V.E chat"}
-        className="fixed bottom-5 right-5 sm:right-7 z-[110] hover:scale-105 transition-transform drop-shadow-[0_10px_14px_rgba(13,13,13,0.3)] cursor-pointer"
+        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-7 z-[110] hover:scale-105 active:scale-95 transition-all drop-shadow-[0_8px_16px_rgba(13,13,13,0.25)] cursor-pointer"
       >
-        <RobotHead size={70} isThinking={typing} />
+        <span className="hidden sm:inline-block">
+          <RobotHead size={68} isThinking={typing} />
+        </span>
+        <span className="inline-block sm:hidden">
+          <RobotHead size={52} isThinking={typing} />
+        </span>
       </button>
     </>
   );

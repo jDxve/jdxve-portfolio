@@ -34,7 +34,7 @@ function CategoryIcon({ label }: { label: string }) {
 
 export default function StackSection() {
   return (
-    <section id="stack" className="relative z-10 max-w-[1100px] mx-auto px-6 lg:px-12 pt-20 pb-20 scroll-mt-16">
+    <section id="stack" className="relative z-10 max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-12 pt-14 md:pt-20 pb-14 md:pb-20 scroll-mt-16">
       <SectionHeader eyebrow="Technical Skills" title="Tech Stack" count={String(categories.length).padStart(2, "0")} />
 
       {/* Category list — icon rail + connector line, matching Projects / Experience */}
@@ -42,38 +42,34 @@ export default function StackSection() {
         {categories.map((cat, i) => {
           const last = i === categories.length - 1;
           return (
-            <div key={cat.label} className="flex gap-4 md:gap-5">
+            <div key={cat.label} className="flex gap-3.5 sm:gap-5">
               {/* Rail: icon tile + connector */}
               <div className="flex flex-col items-center shrink-0">
-                <div className="grid place-items-center w-12 h-12 rounded-lg border border-line bg-surface text-muted">
+                <div className="grid place-items-center w-10 h-10 sm:w-12 sm:h-12 rounded-lg border border-line bg-surface text-muted shrink-0">
                   <CategoryIcon label={cat.label} />
                 </div>
                 {!last && <span className="w-px flex-1 bg-line mt-2" />}
               </div>
 
               {/* Content */}
-              <div className={`min-w-0 flex-1 ${last ? "pb-0" : "pb-10"}`}>
-                <h3 className="font-display font-black text-base md:text-lg text-ink uppercase tracking-tight leading-tight">
+              <div className={`min-w-0 flex-1 ${last ? "pb-0" : "pb-8 sm:pb-10"}`}>
+                <h3 className="font-display font-black text-sm sm:text-base md:text-lg text-ink uppercase tracking-tight leading-tight">
                   {cat.label}
                 </h3>
                 {cat.featured && (
-                  <span className="block mt-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-accent font-bold">
+                  <span className="block mt-1 font-mono text-[9px] sm:text-[10px] uppercase tracking-[0.2em] text-accent font-bold">
                     Primary Focus
                   </span>
                 )}
 
-                {/* Tech — separated by pipes */}
-                <div className="flex flex-wrap items-center gap-x-3 gap-y-2 mt-4">
-                  {cat.items.map((item, j) => (
-                    <span key={item} className="flex items-center gap-x-3">
-                      {j > 0 && (
-                        <span className="text-line-strong select-none" aria-hidden>
-                          |
-                        </span>
-                      )}
-                      <span className="text-xs font-semibold uppercase tracking-wide text-muted hover:text-accent transition-colors cursor-default whitespace-nowrap">
-                        {item}
-                      </span>
+                {/* Tech Chips */}
+                <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mt-3 sm:mt-4">
+                  {cat.items.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-md border border-line-strong px-2.5 py-0.5 sm:px-3 sm:py-1 text-[10px] sm:text-[11px] font-semibold uppercase tracking-wide text-muted hover:border-accent hover:text-accent transition-colors cursor-default whitespace-nowrap"
+                    >
+                      {item}
                     </span>
                   ))}
                 </div>
@@ -83,12 +79,12 @@ export default function StackSection() {
         })}
       </div>
 
-      <div className="mt-16 max-w-2xl">
-        <p className="text-2xl md:text-3xl font-display font-black text-ink uppercase tracking-tight leading-tight mb-5">
+      <div className="mt-12 sm:mt-16 max-w-2xl">
+        <p className="text-xl sm:text-2xl md:text-3xl font-display font-black text-ink uppercase tracking-tight leading-tight mb-3 sm:mb-5">
           CLEAN CODE.<br />CLEAN ARCHITECTURE.<br />
           <span className="text-accent">ALWAYS.</span>
         </p>
-        <p className="text-muted text-sm leading-relaxed">
+        <p className="text-muted text-xs sm:text-sm leading-relaxed">
           Every tool in this stack is chosen deliberately. The goal is always the same — build
           things that are maintainable, scalable, and fast.
         </p>

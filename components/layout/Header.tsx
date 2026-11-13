@@ -37,8 +37,39 @@ export default function Header() {
   }, []);
 
   return (
-    /* Desktop: fixed left sidebar */
-    <aside className="hidden md:flex fixed left-0 top-0 h-full w-[130px] z-50 flex-col items-start px-4 py-7 gap-10">
+    <>
+      {/* Mobile: sticky top navigation bar */}
+      <header className="md:hidden sticky top-0 z-40 w-full flex items-center justify-between px-4 py-2.5 bg-surface/85 backdrop-blur-md border-b border-line transition-all">
+        <a
+          href="#about"
+          aria-label="Home"
+          className="font-display font-black text-lg tracking-tight text-ink leading-none py-1"
+        >
+          jDxve
+        </a>
+
+        <nav className="flex items-center gap-1 overflow-x-auto no-scrollbar">
+          {navLinks.map(({ label, href }) => {
+            const isActive = active === href.slice(1);
+            return (
+              <a
+                key={label}
+                href={href}
+                className={`px-2.5 py-1 rounded-md text-xs font-semibold tracking-wide transition-all whitespace-nowrap ${
+                  isActive
+                    ? "text-accent bg-accent/10 font-bold"
+                    : "text-muted hover:text-ink hover:bg-line/40 font-medium"
+                }`}
+              >
+                {label}
+              </a>
+            );
+          })}
+        </nav>
+      </header>
+
+      {/* Desktop: fixed left sidebar */}
+      <aside className="hidden md:flex fixed left-0 top-0 h-full w-[130px] z-50 flex-col items-start px-4 py-7 gap-10">
         {/* Brand */}
         <a
           href="#about"
@@ -75,6 +106,7 @@ export default function Header() {
             );
           })}
         </nav>
-    </aside>
+      </aside>
+    </>
   );
 }

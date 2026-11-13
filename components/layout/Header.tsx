@@ -48,17 +48,17 @@ export default function Header() {
           jDxve
         </a>
 
-        <nav className="flex items-center gap-1 overflow-x-auto no-scrollbar">
+        <nav className="flex items-center gap-2 sm:gap-3 overflow-x-auto no-scrollbar">
           {navLinks.map(({ label, href }) => {
             const isActive = active === href.slice(1);
             return (
               <a
                 key={label}
                 href={href}
-                className={`px-2.5 py-1 rounded-md text-xs font-semibold tracking-wide transition-all whitespace-nowrap ${
+                className={`py-1 text-xs tracking-wide transition-colors whitespace-nowrap ${
                   isActive
-                    ? "text-accent bg-accent/10 font-bold"
-                    : "text-muted hover:text-ink hover:bg-line/40 font-medium"
+                    ? "text-accent font-bold"
+                    : "text-muted hover:text-ink font-medium"
                 }`}
               >
                 {label}

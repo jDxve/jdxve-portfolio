@@ -62,14 +62,18 @@ export default function StackSection() {
                   </span>
                 )}
 
-                {/* Tech Chips */}
-                <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mt-3 sm:mt-4">
-                  {cat.items.map((item) => (
-                    <span
-                      key={item}
-                      className="rounded-md border border-line-strong px-2.5 py-0.5 sm:px-3 sm:py-1 text-[10px] sm:text-[11px] font-semibold uppercase tracking-wide text-muted hover:border-accent hover:text-accent transition-colors cursor-default whitespace-nowrap"
-                    >
-                      {item}
+                {/* Tech — separated by pipes */}
+                <div className="flex flex-wrap items-center gap-x-2.5 sm:gap-x-3 gap-y-1.5 sm:gap-y-2 mt-3 sm:mt-4">
+                  {cat.items.map((item, j) => (
+                    <span key={item} className="flex items-center gap-x-2.5 sm:gap-x-3">
+                      {j > 0 && (
+                        <span className="text-line-strong select-none text-xs" aria-hidden>
+                          |
+                        </span>
+                      )}
+                      <span className="text-xs font-semibold uppercase tracking-wide text-muted hover:text-accent transition-colors cursor-default whitespace-nowrap">
+                        {item}
+                      </span>
                     </span>
                   ))}
                 </div>

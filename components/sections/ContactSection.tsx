@@ -12,7 +12,7 @@ export default function ContactSection() {
       <ContactModalProvider>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch">
           {/* Left: pitch + CTA (opens contact modal) */}
-          <div className="rounded-xl border border-line bg-surface/50 p-5 sm:p-6 md:p-7 flex flex-col">
+          <div className="rounded-lg p-5 sm:p-6 md:p-7 flex flex-col">
             <h3 className="font-display font-black text-xl sm:text-2xl md:text-3xl text-ink uppercase tracking-tight leading-tight mb-2 sm:mb-3">
               Let&apos;s build<br />
               <span className="text-accent">something great</span>
@@ -26,7 +26,7 @@ export default function ContactSection() {
           </div>
 
           {/* Right: contact list */}
-          <div className="flex flex-col gap-2.5 sm:gap-3">
+          <div className="rounded-lg flex flex-col">
             {contactLinks.map((link) => (
               <ContactRow key={link.label} link={link} />
             ))}

@@ -94,7 +94,7 @@ export default function AboutSection() {
               <div>
                 <CvHeading title="About Me" />
                 <p className="text-muted text-base leading-relaxed">
-                  Hi, I&apos;m John Dave — a{" "}
+                  Hi, I&apos;m John Dave B. Bañas — a{" "}
                   <span className="text-ink font-semibold">Mobile &amp; Full-Stack Developer</span>{" "}
                   focused on building custom mobile and web applications. I work with{" "}
                   <span className="text-ink font-semibold">Flutter, Kotlin, React, NestJS, and AWS</span>,

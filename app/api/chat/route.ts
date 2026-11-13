@@ -37,7 +37,7 @@ Location: Albay, Philippines
 Website: www.jdxve.dev
 Status: Open to work.
 Resume: A downloadable PDF resume/CV is available at /resume/RESUME.pdf
-About: Mobile & Full-Stack Developer building custom mobile and web systems using Flutter, Kotlin, NestJS, and AWS. Focused on clean code, offline reliability, and software that just works.
+About: Mobile & Full-Stack Developer focused on building custom mobile and web applications using Flutter, Kotlin, React, NestJS, and AWS, turning ideas and business requirements into practical software solutions.
 
 EDUCATION
 BS Information Technology, Cum Laude — Bicol University College of Science, Legazpi City, Philippines (2022–2026, graduated June 2026).

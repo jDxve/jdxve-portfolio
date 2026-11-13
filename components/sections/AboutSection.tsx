@@ -39,18 +39,18 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="relative z-10 max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-12 pt-6 sm:pt-10 pb-14 md:pb-20 scroll-mt-16"
+      className="relative z-10 max-w-[1100px] mx-auto px-6 lg:px-12 pt-8 pb-20 scroll-mt-16"
     >
       <div className="grid grid-cols-1 md:grid-cols-[300px_1fr] lg:grid-cols-[320px_1fr] gap-8 md:gap-10 lg:gap-14">
         {/* ---------- Sidebar ---------- */}
-        <aside className="flex flex-col gap-5 sm:gap-6">
+        <aside className="flex flex-col gap-6 text-left items-start">
           {/* Photo — halftone dot portrait */}
-          <div className="relative aspect-[4/5] max-w-[240px] sm:max-w-[280px] md:max-w-none mx-auto md:mx-0 w-full rounded-md overflow-hidden">
+          <div className="relative aspect-[4/5] max-w-[240px] sm:max-w-[280px] md:max-w-none w-full rounded-md overflow-hidden">
             <HalftoneImage src="/my_profile.jpeg" alt="John Dave B. Bañas" />
           </div>
 
           {/* Identity block */}
-          <div className="text-center md:text-left">
+          <div className="text-left w-full">
             <h1 className="font-display font-black text-2xl sm:text-[26px] md:text-[28px] text-ink tracking-tight leading-[1.15]">
               John Dave B. Bañas
             </h1>
@@ -61,12 +61,12 @@ export default function AboutSection() {
           </div>
 
           {/* Divider */}
-          <div className="border-t border-line hidden md:block" />
+          <div className="border-t border-line w-full" />
 
           {/* Details — uniform stroke icons */}
-          <div className="flex flex-col sm:flex-row md:flex-col items-center md:items-start justify-center gap-3">
+          <div className="flex flex-col gap-3 text-left w-full items-start">
             {/* Location */}
-            <span className="inline-flex items-center gap-2.5 font-mono text-xs sm:text-sm text-muted">
+            <span className="inline-flex items-center gap-3 font-mono text-xs sm:text-sm text-muted">
               <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 text-faint">
                 <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
                 <circle cx="12" cy="10" r="3"/>

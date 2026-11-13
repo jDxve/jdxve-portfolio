@@ -1,22 +1,21 @@
 export const projects = [
   {
     id: "01",
-    title: "MyNagAlaga",
-    subtitle: "Government Services Platform",
-    role: "Lead Mobile Developer",
-    context: null,
-    year: "2026",
-    award: "Grand Winner — 1st Naga City Mayoral Hackathon",
-    awardCategory: "Social Services Challenge",
-    article: "https://bicol-u.edu.ph/buenos-sweep-top-awards-at-1st-naga-city-mayoral-hackathon/",
+    title: "On-Premises Retail POS System",
+    subtitle: "Cross-Platform Retail POS & Local Server Administration",
+    role: "Sole Developer",
+    context: "Paid Commercial Project",
+    year: "Jun – Oct 2026",
+    award: null,
+    awardCategory: null,
+    article: null,
     bullets: [
-      "Engineered the citizen-facing mobile application using Clean Architecture and Riverpod, ensuring high maintainability, consistent code standards, and reliable state management.",
-      "Integrated a secure, multi-purpose Digital Badge module, accelerating identity validation for aid distribution (ayuda) and civic services to drive 3x faster case resolution for municipal staff.",
-      "Developed interactive OpenStreetMap (OSM) routing features, delivering proximity-based evacuation navigation that works both online and offline during disaster emergencies.",
+      "Designed and delivered an on-premises POS system for a retail business, spanning cross-platform Flutter (Windows & Android), NestJS REST API, and self-hosted Ubuntu Server administration.",
+      "Built an in-house QR distribution portal with automated CI/CD releases for streamlined Android and Windows client deployments.",
     ],
-    tags: ["Flutter", "Riverpod", "Clean Architecture", "Retrofit + Dio", "OpenStreetMap"],
-    logo: "/mynagalaga.png",
-    repo: "https://github.com/jDxve/MyNagaLaga-Mobile-App",
+    tags: ["Flutter", "Windows", "Android", "NestJS", "Ubuntu Server", "REST APIs", "CI/CD"],
+    logo: null,
+    repo: null,
   },
   {
     id: "02",
@@ -38,38 +37,54 @@ export const projects = [
   },
   {
     id: "03",
+    title: "MyNagAlaga",
+    subtitle: "Government Services Mobile Platform",
+    role: "Lead Mobile Developer",
+    context: "Grand Winner, 1st Naga City Mayoral Hackathon (Social Services Challenge)",
+    year: "2026",
+    award: "Grand Winner — 1st Naga City Mayoral Hackathon",
+    awardCategory: "Social Services Challenge",
+    article: "https://bicol-u.edu.ph/buenos-sweep-top-awards-at-1st-naga-city-mayoral-hackathon/",
+    bullets: [
+      "Built a citizen-facing Flutter app (Clean Architecture, Riverpod) with a Digital Badge for identity validation in municipal aid distribution.",
+      "Integrated OpenStreetMap proximity routing for offline and online navigation during disaster emergencies.",
+    ],
+    tags: ["Flutter", "Riverpod", "Clean Architecture", "Digital Badge", "OpenStreetMap"],
+    logo: "/mynagalaga.png",
+    repo: "https://github.com/jDxve/MyNagaLaga-Mobile-App",
+  },
+  {
+    id: "04",
     title: "ElecXus",
     subtitle: "Electric Service Management System",
-    role: "Full Stack Developer",
-    context: "Capstone · Albay Electric Cooperative",
+    role: "Full-Stack Developer, Capstone",
+    context: "Albay Electric Cooperative (ALECO)",
     year: "Aug – Nov 2025",
     award: null,
     awardCategory: null,
     article: null,
     bullets: [
-      "Engineered a self-service utility application with automated billing, geospatial complaint logging, and live outage tracking via the Facebook Graph API, earning a 4.62/5.0 UAT rating and a 98% post-launch adoption rate.",
-      "Integrated the PayMongo payment gateway (e-wallets, cards) with webhook-driven reconciliation for instant transaction confirmation.",
-      "Delivered real-time status pipelines using Socket.IO and Firebase Cloud Messaging (FCM) for push alerts, providing end-to-end transparency across high-volume issue resolution workflows.",
+      "Built a utility service platform for Albay Electric Cooperative (ALECO) using Flutter, Express, and MySQL, with automated billing, PayMongo payment reconciliation, and real-time updates via Socket.IO and FCM.",
+      "Achieved a 4.62/5.0 rating in User Acceptance Testing (UAT).",
     ],
-    tags: ["Flutter", "Express", "MySQL", "PayMongo", "Socket.IO", "FCM", "Facebook Graph API"],
+    tags: ["Flutter", "Express", "MySQL", "PayMongo", "Socket.IO", "FCM"],
     logo: "/elecxus.png",
     repo: "https://github.com/jDxve/elecxus-mobile-app",
   },
   {
-    id: "04",
+    id: "05",
     title: "EatEase",
     subtitle: "Multi-Vendor Food Ordering Platform",
-    role: "Full Stack Developer",
+    role: "Full-Stack Developer",
     context: null,
     year: "Jan – Mar 2025",
     award: null,
     awardCategory: null,
     article: null,
     bullets: [
-      "Built a cross-platform Flutter food delivery application featuring live order tracking, PayMongo payments, and digital checkout.",
-      "Architected the MongoDB schema and Node.js REST API layer managing order lifecycles, vendor menus, and real-time WebSocket chat between customers and vendors.",
+      "Built a food delivery app (Flutter, Node.js, MongoDB) with live order tracking, PayMongo payments, and real-time WebSocket chat between customers and vendors.",
     ],
-    tags: ["Flutter", "WebSocket", "PayMongo", "Node.js", "MongoDB"],
+    tags: ["Flutter", "Node.js", "MongoDB", "PayMongo", "WebSockets"],
     logo: "/eatease.png",
     repo: "https://github.com/jDxve/EatEase",
   },
@@ -77,10 +92,27 @@ export const projects = [
 
 export const experiences = [
   {
-    role: "Mobile & Full-Stack Developer",
-    company: "LCC Group of Companies",
+    role: "Freelance Mobile & Full-Stack Developer",
+    company: "US-Based Private Client",
     project: null,
-    period: "July 2026 – Present",
+    period: "Oct 2026 – Present",
+    bullets: [
+      {
+        lead: "Feature Engineering",
+        text: "Engineering mobile and web feature modules for a social discovery and media-sharing platform, implementing secure US payment integration, user authentication, and dynamic profiles.",
+      },
+      {
+        lead: "AWS Cloud Infrastructure",
+        text: "Architected cloud infrastructure on AWS utilizing S3 for media storage, EC2 for server deployment, and SES for automated transactional email workflows.",
+      },
+    ],
+    tags: ["Flutter", "Web", "AWS (S3, EC2, SES)", "TypeScript", "Payments"],
+  },
+  {
+    role: "Mobile & Full-Stack Developer (Contract)",
+    company: "LCC Group of Companies / LionTech Shared Services Inc.",
+    project: null,
+    period: "Jul 2026 – Nov 2026",
     bullets: [
       {
         lead: "Legacy WMS Modernization",
@@ -88,64 +120,39 @@ export const experiences = [
       },
       {
         lead: "CI/CD & Over-the-Air Delivery",
-        text: "Built a GitHub Actions pipeline for Android builds, signing, and over-the-air (OTA) distribution to retail kiosks via Server-Sent Events, eliminating manual APK deployments.",
+        text: "Built a GitHub Actions CI/CD pipeline for Android builds, signing, and over-the-air (OTA) distribution to retail kiosks via Server-Sent Events, eliminating manual APK deployments.",
       },
       {
         lead: "Offline-First Data Reliability",
         text: "Engineered an offline-first SQLite data layer for apps used by 100+ daily staff across 10+ retail locations with intermittent connectivity.",
       },
       {
-        lead: "Multi-Tier Price Verification",
-        text: "Engineered a multi-tier price verification and promo display system spanning a Kotlin kiosk app, a NestJS backend, and a React admin dashboard.",
+        lead: "Legacy System Refactoring",
+        text: "Enhanced legacy systems by refactoring core codebases and fixing data sync failures.",
       },
     ],
-    tags: ["Kotlin", "Jetpack Compose", "Android", "NestJS", "React", "SQLite", "GitHub Actions", "SSE"],
+    tags: ["Kotlin", "Jetpack Compose", "Android", "NestJS", "SQLite", "GitHub Actions", "CI/CD", "Server-Sent Events"],
   },
   {
-    role: "Mobile & Full-Stack Developer (Part-Time)",
-    company: "Freelance",
-    project: "On-Premises Retail POS System · Project-Based",
-    period: "June – October 2026",
-    bullets: [
-      {
-        lead: "Sole Developer, End to End",
-        text: "Designed and delivered an on-premises POS system for a retail business as the sole developer, from system design through local server provisioning.",
-      },
-      {
-        lead: "Cross-Platform Register App",
-        text: "Built a cross-platform Flutter app for Windows registers and Android tablets, backed by a NestJS REST API with Jest E2E tests running on self-hosted Ubuntu servers.",
-      },
-      {
-        lead: "In-House Distribution Portal",
-        text: "Built a distribution portal for installing Android and Windows builds via QR code, integrated with automated CI/CD releases.",
-      },
-      {
-        lead: "Server Administration",
-        text: "Administered the self-hosted Ubuntu Server environment, handling deployments, server configuration, and ongoing maintenance.",
-      },
-    ],
-    tags: ["Flutter", "NestJS", "Windows", "Android", "Ubuntu Server", "Jest", "CI/CD"],
-  },
-  {
-    role: "Software Developer Intern (OJT)",
+    role: "Software Developer Intern",
     company: "Quanby Solutions, Inc.",
-    project: "Enterprise Web Platform",
-    period: "Feb – May 2026",
+    project: null,
+    period: "Feb 2026 – May 2026",
     bullets: [
       {
-        lead: "Backend Ownership",
-        text: "Owned backend development for an enterprise web platform built with Next.js, NestJS, and PostgreSQL, leading code reviews across a 3-person team.",
+        lead: "Backend Ownership & Code Reviews",
+        text: "Owned backend development for an enterprise web platform built with Next.js, NestJS, and PostgreSQL, leading code reviews in a 3-person team.",
       },
       {
-        lead: "End-to-End Module Delivery",
+        lead: "Full-Stack Module Delivery",
         text: "Shipped 11 full-stack production modules covering authentication, workflow automation, business logic calculations, and reporting.",
       },
       {
-        lead: "Security & Compliance",
-        text: "Implemented role-based access control (RBAC), session timeouts, audit logging, and Jest/Supertest integration test suites to safeguard sensitive workflows.",
+        lead: "Security & Integration Testing",
+        text: "Implemented RBAC, session timeouts, audit logging, and Jest/Supertest integration test suites.",
       },
     ],
-    tags: ["NestJS", "PostgreSQL", "Next.js", "TypeScript", "REST APIs", "RBAC", "JWT", "Jest"],
+    tags: ["Next.js", "NestJS", "PostgreSQL", "TypeScript", "REST APIs", "RBAC", "Jest", "Supertest"],
   },
 ];
 
@@ -168,6 +175,7 @@ export const categories: Category[] = [
       "iOS",
       "Kotlin",
       "Jetpack Compose",
+      "Kotlin Multiplatform (KMP)",
       "Riverpod",
       "Hilt",
       "SQLite",
@@ -207,6 +215,7 @@ export const categories: Category[] = [
   {
     label: "DevOps",
     items: [
+      "AWS (S3, EC2, SES)",
       "Git",
       "GitHub Actions",
       "CI/CD",
@@ -217,8 +226,8 @@ export const categories: Category[] = [
 ];
 
 export const contactLinks = [
-  { label: "Email",    value: "johndavebanas03@gmail.com", href: "mailto:johndavebanas03@gmail.com",      tag: "Direct Line"  },
-  { label: "Phone",    value: "(+63) 910-497-9045",        href: "tel:+639104979045",                     tag: "Mobile"       },
-  { label: "LinkedIn", value: "linkedin.com/in/jdv-bñs",  href: "https://linkedin.com/in/jdv-b%C3%B1s", tag: "Professional" },
-  { label: "GitHub",   value: "github.com/jDxve",          href: "https://github.com/jDxve",              tag: "Open Source"  },
+  { label: "Email",    value: "johndavebanas03@gmail.com", href: "mailto:johndavebanas03@gmail.com", tag: "Direct Line"  },
+  { label: "Phone",    value: "(+63) 910-497-9045",        href: "tel:+639104979045",                  tag: "Mobile"       },
+  { label: "LinkedIn", value: "linkedin.com/in/jdv-bns",   href: "https://linkedin.com/in/jdv-bns",    tag: "Professional" },
+  { label: "GitHub",   value: "github.com/jDxve",          href: "https://github.com/jDxve",           tag: "Open Source"  },
 ];

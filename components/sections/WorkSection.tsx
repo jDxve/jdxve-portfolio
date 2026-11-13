@@ -28,6 +28,18 @@ function ArrowIcon({ size = 15 }: { size?: number }) {
   );
 }
 
+// Terminal/server octicon for on-prem / system projects
+function ServerIcon({ size = 20 }: { size?: number }) {
+  return (
+    <svg viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect width="20" height="8" x="2" y="2" rx="2" ry="2" />
+      <rect width="20" height="8" x="2" y="14" rx="2" ry="2" />
+      <line x1="6" x2="6.01" y1="6" y2="6" />
+      <line x1="6" x2="6.01" y1="18" y2="18" />
+    </svg>
+  );
+}
+
 // Logo tile + vertical connector line down the list
 function Rail({ children, last }: { children: React.ReactNode; last: boolean }) {
   return (
@@ -67,7 +79,7 @@ export default function WorkSection() {
           {experiences.map((exp, i) => {
             const last = i === experiences.length - 1;
             return (
-              <article key={exp.role} className="flex gap-4 md:gap-5">
+              <article key={`${exp.company}-${exp.role}`} className="flex gap-4 md:gap-5">
                 <Rail last={last}>
                   <OrgIcon />
                 </Rail>
@@ -119,8 +131,10 @@ export default function WorkSection() {
               <Rail last={last}>
                 {project.logo ? (
                   <Image src={project.logo} alt={project.title} fill className="object-contain p-1.5" />
-                ) : (
+                ) : project.repo ? (
                   <RepoIcon />
+                ) : (
+                  <ServerIcon />
                 )}
               </Rail>
 

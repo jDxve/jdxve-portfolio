@@ -96,11 +96,9 @@ export default function AboutSection() {
                 <p className="text-muted text-base leading-relaxed">
                   Hi, I&apos;m John Dave — a{" "}
                   <span className="text-ink font-semibold">Mobile &amp; Full-Stack Developer</span>{" "}
-                  building cross-platform Flutter apps, native Android with Kotlin and Jetpack
-                  Compose, and the{" "}
-                  <span className="text-ink font-semibold">NestJS backends</span> behind them.
-                  Focused on clean architecture, offline-first reliability, and shipping systems
-                  that hold up in production.
+                  building custom mobile and web systems. I work across{" "}
+                  <span className="text-ink font-semibold">Flutter, Kotlin, NestJS, and AWS</span>,
+                  focusing on clean code, offline reliability, and software that just works.
                 </p>
               </div>
 

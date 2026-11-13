@@ -59,11 +59,9 @@ const SUGGESTIONS = [
 function RobotHead({
   size = 48,
   isThinking = false,
-  isOpen = false,
 }: {
   size?: number;
   isThinking?: boolean;
-  isOpen?: boolean;
 }) {
   return (
     <div className="relative inline-flex items-center justify-center shrink-0">
@@ -164,15 +162,13 @@ function RobotHead({
 function BotAvatar({
   size = 38,
   isThinking = false,
-  isOpen = false,
 }: {
   size?: number;
   isThinking?: boolean;
-  isOpen?: boolean;
 }) {
   return (
     <span className="shrink-0 inline-flex items-center justify-center">
-      <RobotHead size={size} isThinking={isThinking} isOpen={isOpen} />
+      <RobotHead size={size} isThinking={isThinking} />
     </span>
   );
 }
@@ -241,7 +237,7 @@ export default function AiChat() {
           {/* Header */}
           <div className="flex items-center justify-between border-b border-line px-5 py-4 bg-surface shrink-0">
             <div className="flex items-center gap-3 min-w-0">
-              <BotAvatar size={34} isThinking={typing} isOpen={open} />
+              <BotAvatar size={34} isThinking={typing} />
               <div className="flex flex-col min-w-0">
                 <span className="font-display font-black text-base text-ink uppercase tracking-tight leading-none">
                   A.V.E
@@ -270,7 +266,7 @@ export default function AiChat() {
               m.role === "ai" ? (
                 <div key={i} className="flex items-start gap-2.5 max-w-[90%] self-start">
                   <div className="mt-0.5 shrink-0">
-                    <BotAvatar size={22} isOpen={open} />
+                    <BotAvatar size={22} />
                   </div>
                   <AiMessage text={m.text} />
                 </div>
@@ -283,7 +279,7 @@ export default function AiChat() {
 
             {typing && (
               <div className="flex items-center gap-2.5 self-start">
-                <BotAvatar size={22} isThinking={true} isOpen={open} />
+                <BotAvatar size={22} isThinking={true} />
                 <div className="flex items-center gap-1.5 py-1">
                   <span className="w-2 h-2 rounded-full bg-accent/70 animate-bounce" style={{ animationDelay: "0ms", animationDuration: "1s" }} />
                   <span className="w-2 h-2 rounded-full bg-accent/70 animate-bounce" style={{ animationDelay: "150ms", animationDuration: "1s" }} />
@@ -348,7 +344,7 @@ export default function AiChat() {
         aria-label={open ? "Close A.V.E chat" : "Open A.V.E chat"}
         className="fixed bottom-5 right-5 sm:right-7 z-[110] hover:scale-105 transition-transform drop-shadow-[0_10px_14px_rgba(13,13,13,0.3)] cursor-pointer"
       >
-        <RobotHead size={70} isThinking={typing} isOpen={open} />
+        <RobotHead size={70} isThinking={typing} />
       </button>
     </>
   );
